@@ -1,0 +1,154 @@
+
+                        EDIT MENU
+
+Clear	  Clear the text area
+Select all
+	  Select the entire text
+
+Cut	  Copy selected region to buffer and delete
+	  selected text (F4)
+Copy	  Copy selected region to buffer (F5)
+Paste	  Insert contents of the buffer at the insert
+	  cursor position (F6)
+
+Note that BWEDIT maintains a single cut buffer for all
+transliterator windows opened (and another single one for
+all main windows). This convention allows you to export
+transliterated text across various transliterator windows
+or across various main windows (but NOT between a main
+and a transliterator window).
+
+Some other related keyboard bindings are:
+
+F7	  Start marking a region (after clearing the
+	  selection, if any)
+F8	  Complete marking of a region and select the
+	  region between the current cursor position and
+	  a previous cursor position which the user marked
+	  using F7.
+
+Search	  Search for strings in the editor text (F11)
+
+The search routine is introduced in Version 2.2 of BWEDIT.
+You may use this facility to search for literal strings in
+the text currently being edited. The replace function
+replaces the `next' occurrence of the search string by the
+replace string. The `replace all' function replaces all
+occurrences of the search string by the replace string and
+outputs a diagnostic message on the number of replacements
+carried out. The search proceeds in the forward direction
+by default. If you want to search backward, click the
+radio button below the replace string entry. By default,
+the search is case-sensitive. You may, however, alter
+the default behavior by turning off the radiobutton labeled
+`Case-sensitive'. Note that since Bengali letters do not
+have `case', this feature is applicable for the
+transliterator window only.
+
+The search proceeds in the wrap-around fashion. That is,
+in the forward search mode, when search hits the end of the
+text, search continues from the top of the text. Similarly
+for backward search, when the beginning of the text is
+reached, search continues from the end of the text.
+
+Initially search starts from the beginning of the text
+(and not from the insert cursor). Search finds out the
+first occurrence (or the last one in backward mode) of the
+search string in the text during the first request. A
+pointer keeps track of the position of the search string
+found. The next search or replace request starts searching
+from this pointer. Each of the operations -- `search',
+`replace' and and `replace all' -- highlights the text found
+or replaced.
+
+Since text edited in the transliterator windows are 7-bit
+ASCII files, you can directly key in the text of search
+and replace strings using the keyboard only.
+
+This version of BWEDIT does not support regular expressions
+in the search or replace strings.
+
+Goto	  Go to a specified line number (Alt + #\35#)
+
+This feature is introduced in version 3.0 of bwedit.
+
+If you select the menu item [Goto line] a small dialog
+box is opened and asks for a line number. If you input
+a line number in the entry area and press the button
+`Go to', the insert cursor of the text area goes to the
+beginning of that line and the text is appropriately
+scrolled so that this line is visible in the display
+area. The [Goto line] dialog box can be used in another
+way, namely when you click the button `current', the
+current line number is displayed in the entry area.
+
+Note that the [Goto line] dialog box remains open until
+you specifically close it by pressing the `Dismiss'
+button. If you work with multiple (main and transliterator)
+windows and want to go to a line in a window different
+from that from which the dialog box is opened, then just
+go to this second editor window and select the corresponding
+item [Edit]/[Goto line]. The old dialog box can now be
+used for this new window.
+
+Check spelling
+	  Check spelling in the text of the transliterator
+	  window (F12)
+Clear spelling error marks
+	  Don't show the spell checking marks with
+	  different color codes (Shift + F12)
+
+The spell-checker reports three types of errors using three
+different color codes:
+
+Blue	An error has occurred during the Roman-to-Bengali
+	transliteration.
+
+Green	The word is not in the dictionary, but is a
+	concatenation of two or more words found in the
+	dictionary.
+
+Red	The word is neither in the dictionary nor is a
+	concatenation of two or more dictionary words.
+
+Words that are allowed by the dictionary are displayed
+in the default font color for the editor.
+
+Note that spell-checking is not done on-line, that is, you
+have to invoke the spell-checker routine by calling the
+menu item [Edit]/[Check spelling]. Similarly the error
+codes also do not disappear automatically, even when you
+correct the errors. You have to call the spell checker
+again in order to see which of your corrections are now
+passed by the dictionary. Or you may turn off all the error
+displays by selecting the menu item [Edit]/[Clear spelling
+error marks].
+
+The spell-checker program runs as an independent application
+compiled from a C source available in the distribution. The
+current form of the spell-checking algorithm is somewhat
+crude. That is, it often certifies a correct word as
+erroneous. However, it never calls a faulty spelling
+correct. This is why the spell-checker is still useful!
+
+A precompiled database of Bengali words also accompanies
+the distribution. You may, of course, use any other
+dictionary by replacing this file (bw.dct) by another. The
+entries in the file must be arranged in alphabetic order
+(following the ISCII convention). Each line consists of
+four fields separated by colons. Here are the description
+of the fields:
+
+Field 1	 The word in ISCII encoding
+Field 2	 The word in BW font encoding
+Field 3	 The word in a transliterated form
+Field 4	 The parts of speech in which the word can be used
+	 (0 - #ibeSF##\14#, 1 - #ibeSFN#, 2 - #sb^nAm#, 3 - #ab##\14##y#
+	 and 4 - #i##\133##yA#)
+
+An example
+
+ЛЪСе:vAelA:vAlo:013
+
+is the line for the word #vAelA#. This word can be used as
+#ibeSF##\14#, #ibeSFN# and #ab##\14##y#.

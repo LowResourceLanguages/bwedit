@@ -1,0 +1,29 @@
+
+                       TOOLBAR (F10)
+
+The toolbar at the top of the main window consists of a
+series of menu buttons. These buttons perform the following
+functions:
+
+File: Perform file operations, like load and save Bengali
+      text files, open and close editor windows and quit
+      the application.
+
+Edit: Edit operations - clear, cut, copy, paste, search.
+
+Tag: Change display style for the highlighted text.
+
+Import: Convert to Bengali text 7-bit ASCII text files
+      written in a specific format and import the converted
+      text to the main editor window.
+
+Export: Export text in editor to one of the formats:
+      HTML, LaTeX and PostScript.
+
+Mail: Read mails, send contents of the editors through
+      e-mail, read encoded files, edit mail options.
+
+Option: Customize configurations for the main editor window,
+      the transliterator window and mail operations.
+
+Help: Launch help windows.

@@ -1,0 +1,25 @@
+
+                      EXPORT MENU
+
+Export text in the editor to the formats
+
+     LaTeX	for use with "Bengali Writer TeX Interface"
+		(Alt + L)
+      HTML	for viewing in web browsers (Alt + H)
+PostScript	for printing (Alt + P)
+
+In the first two cases, it is possible to export the file
+in the verbatim mode or in the normal mode that allows
+HTML viewers or LaTeX to format the document. On the other
+hand, the text is exported only in the verbatim mode to
+PostScript files.
+
+In this version of bwedit you can export the tags to the
+above formats. The conversion is almost WYSIWYG in the
+verbatim mode. There are, however, a few limitations:
+
+- Underlined text in the editor is exported without being
+  underlined.
+
+- Text tagged by a general X font is exported as if it is
+  a plain Roman text.

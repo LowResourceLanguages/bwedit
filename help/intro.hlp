@@ -1,0 +1,67 @@
+
+                     INTRODUCTION
+
+Welcome to the experimental Bengali text editor BWEDIT. It
+is an X11 application for editing and processing Bengali
+text files. It provides a very easy-to-use and effective
+graphical interface. Though not sophisticated enough,
+BWEDIT incorporates many features commonly found in modern
+editors. In addition, it is capable of converting Bengali
+text files to html, LaTeX and PostScript. It also provides
+facilities to convert a text file written in 7-bit ASCII
+to a Bengali text file. Facility to read and send bengali
+documents through e-mails is also incorporated. A spell
+checker for Romanized editing mode is also provided.
+
+
+VERSION INFO: The current version of BWEDIT is 3.0.
+
+
+REQUIREMENTS
+
+ - The Tcl/Tk shell wish (Necessary)
+
+   Version 7.6 onwards of Tcl and version 4.2 onwards of Tk
+   should be fine. If you have older versions of Tcl/Tk,
+   try out. It might work.
+
+ - X11 bitmap fonts for Bengali (Necessary)
+
+   BWEDIT is based on a set of BDF files also written by
+   the author of BWEDIT. These files have ids of the form
+
+     -*-bengali-medium-r-*-*-*-120-*-*-*-*-*-fontspecific
+
+   and are available at point sizes 100, 120, 150, 180,
+   210, 250, 300 and 360. Slanted versions of these font
+   files are also needed.
+
+ - PostScript Type 1 fonts (Optional)
+
+   A Type 1 PostScript font is needed for the `Export-to-
+   PostScript' operation of BWEDIT. This PostScript file
+   is bundled with the bwedit distribution.
+
+ - TeX fonts (Optional)
+
+   Needed if you want to compile files exported by BWEDIT 
+   in the LaTeX format.
+
+All these are available as freeware. For Tcl/Tk look at
+
+   http://sunscript.sun.com/
+
+For the Bengali fonts, browse from the author's homepage
+
+   http://www2.csa.iisc.ernet.in/~abhij/
+or
+   http://in.geocities.com/ad_rab/bengali/
+
+
+AUTHOR:
+
+Dr. Abhijit Das
+Department of Mathematics
+Indian Institute of Technology
+Kanpur 208 016
+E-mail: ad_rab@yahoo.com

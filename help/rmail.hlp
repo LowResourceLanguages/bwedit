@@ -1,0 +1,40 @@
+
+                       MAIL MENU
+
+Read Mail (F9)
+     Open a mail reader window to display user's mails.
+     BWEDIT can read user's local mailbox and show the
+     mails accordingly.
+
+Send mail (Shift + F9)
+    E-mail the contents of the transliterator window. A
+    popup dialog box asks for recipient's e-mail address,
+    a subject and an encoding scheme. The files you edit
+    in this window should be a 7-bit ASCII file. So this
+    file can be transfered as plain text. BWEDIT also
+    allows you to encode the text before sending. The
+    encodings supported are BW, MIME and UU.
+
+Read bwencoded file (Alt + 5)
+    Read a file after bwdecoding it. The bwencoded file
+    holds the information whether it is generated from
+    the text in the main window or the transliterator
+    window. The content is displayed accordingly. That is,
+    if the bwencoded file is a type 0 file (one generated
+    from the main window), a new main window is opened
+    that displays the decoded text. On the other hand, if
+    the type is 1, the decoded text is shown in the text
+    area of this transliterator window.
+
+Read MIME encoded file (Alt + 6)
+Read uuencoded file (Alt + 7)
+    Read a MIME or uu encoded file from hard disk, decode
+    it correspondingly and show the decoded text in the
+    text area. MIME and uu encoded files do not hold the
+    information regarding from which window they are
+    generated.
+
+Edit mail options
+    Customize several options corresponding to the mailing
+    operations. This is described in detail for the main
+    window's mail menu.

@@ -1,0 +1,46 @@
+
+                       MAIL MENU
+
+Reread inbox
+	Reread the mail inbox and refresh the contents
+	list accordingly (Alt + R)
+Read folder
+	Read a mail folder and show the mails saved there
+	interactively. The user must specify a file name
+	to open as a mail folder. One need not change the
+	inbox to view the mails in these folders. The
+	inbox continues to have the same default value.
+Show next mail (Down / n / +)
+Show previous mail (Up / p / -)
+Show first mail (Home)
+Show last mail (End)
+Ten mails forward (Right / N)
+Ten mails backward (Left / P)
+Goto mail (#\35#)
+	These menu entries allow you to navigate through
+	the list of e-mails.
+Send Mail
+	Open a dialog box to send e-mail to one or more
+	recipients. The body of the e-mail can be read
+	from text in a main or transliterator window,
+	from a hard disk file, or mail edited in the read
+	mail window. (Shift + F9)
+Send reply
+	Send reply to the currently selected mail. The same
+	dialog box is opened for sending the mail. The
+	`Reply-To' element of the original mail is used
+	to determine the address to which the reply is to
+	be sent. (F9)
+Edit reply / Done editing
+	Edit the reply to the mail currently being
+	displayed. The same display area is used to edit the
+	reply.  The original message is copied in the reply
+	with "> " inserted at the start of each line.
+	When the reply is edited, the mail read features
+	(Read inbox/folder, navigating through the list of
+	headers etc) are disabled. You must commit by
+	clicking `Done editing' in order to tell BWEDIT
+	that you have really finished editing and possibly
+	sent the reply to the sender of the original mail.
+	After this clicking, the display area restores to
+	the default `read mail' mode. (Alt + E)

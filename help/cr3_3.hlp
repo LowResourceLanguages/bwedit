@@ -1,0 +1,157 @@
+
+3.3 CONJUNCT CONSONANTS
+
+Type		To get
+kk		#\128#
+kT		#\129#
+kt		#\130#
+kb, kw		#\131#
+km		#\132#
+kr		#\133#
+kl		#\134#
+kkh		#\135#
+kkhN		#\136#
+kkhm		#\137#
+ks		#\138#
+gdh, gD		#\139#
+gn		#\140#
+gb		#\141#
+gm		#\142#
+gl		#\143#
+ghn, Gn		#\144#
+nk		#\145#
+nkkh		#\146#
+nkh, nK		#\147#
+ng		#\148#
+ngh, nG		#\149#
+ngm		#\150#
+chch, cc		#\151#
+chchh, cC	#\152#
+chchhb, chchhw	#\153#
+cCb, cCw	#\153#
+cn		#\154#
+jj		#\155#
+jjb, jjw		#\156#
+jjh, jJ		#\157#
+jn		#\158#
+jb, jw		#\159#
+nch, nc		#\80#
+nchh, nC		#\161#
+nj		#\162#
+njh, nJ		#\163#
+TT		#\164#
+Tb, Tw		#\165#
+DD		#\166#
+NT		#\167#
+NTh		#\168#
+ND		#\169#
+NN		#\170#
+Nm		#\171#
+tt		#\172#
+ttb, ttw		#\173#
+tth		#\174#
+tn		#\175#
+tb, tw		#\176#
+tm		#\177#
+tr		#\178#
+^^tr		#\179#
+thb, thw		#\38#
+dg		#\180#
+dgh, dG		#\181#
+dd		#\182#
+ddh		#\183#
+db, dw		#\184#
+dv, dbh		#\185#
+dvr, dbhr		#\186#
+dm		#\187#
+dhn		#\188#
+dhb, dhw		#\189#
+nT		#\190#
+nD		#\191#
+nt		#\192#
+ntu		#\193#
+ntb, ntw		#\194#
+ntr		#\195#
+nth		#\196#
+nd		#\197#
+ndb, ndw		#\64#
+ndh		#\198#
+nn		#\199#
+nb, nw		#\200#
+nm		#\201#
+ns		#\202#
+pT		#\203#
+pt		#\204#
+pn		#\205#
+pp		#\206#
+pl		#\207#
+ps		#\208#
+fl, phl		#\209#
+bj		#\210#
+bd		#\211#
+bdh		#\212#
+bb		#\213#
+bl		#\214#
+vr, bhr		#\215#
+vl, bhl		#\216#
+mn		#\217#
+mp		#\218#
+mf, mph		#\219#
+mb		#\220#
+mv, mbh		#\221#
+mvr, mbhr	#\222#
+mm		#\223#
+ml		#\224#
+lk		#\225#
+lg		#\226#
+^^lg		#\227#
+lT		#\228#
+lD		#\229#
+lp		#\230#
+lb, lw		#\231#
+lm		#\232#
+ll		#\233#
+Sc, shch		#\234#
+SC, shchh	#\235#
+Sn, shn		#\236#
+Sm, shm		#\237#
+Sl, shl		#\238#
+Sb,Sw,shb,shw	#\239#
+ssk		#\240#
+sskr		#\241#
+ssT		#\242#
+ssTh		#\243#
+ssN		#\244#
+ssp		#\245#
+ssf, ssph		#\246#
+ssm		#\247#
+sk		#\248#
+skr		#\249#
+skl		#\250#
+skh, sK		#\251#
+sT		#\252#
+st		#\253#
+stu		#\254#
+str		#\255#
+sth		#\16#
+sn		#\17#
+sp		#\18#
+spl		#\19#
+sf, sph		#\20#
+sb, sw		#\21#
+sm		#\22#
+sl		#\23#
+hN, Nh		#\24#
+hn, nh		#\31#
+hb, hw		#\62#
+hm		#\76#
+hl, lh		#\125#
+
+SPECIAL CONJUNCT PRIMITIVES
+
+Type    To get
+^r,r	#\94#   #(erf)#
+^r,r	#\15#   #(r-flA)#
+^y,y	#\14#   #(Y-flA)#
+^	#w#   #(c##\197##\15##ib##\197##u)#
+ae	#\14##A#

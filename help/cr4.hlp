@@ -1,0 +1,174 @@
+
+                 4. CUSTOMIZE ENCODING
+
+Bwedit provides a default encoding scheme for the entire
+Bengali alphabet. You may, however, alter the encoding to
+define an encoding that suits you better. This section
+explains the do's and don'ts in this regard.
+
+The default encoding is defined in a file named `lib/bn.enc'
+under the bwedit installation directory. You may alter this
+file at your own will. Alternatively, you may create your
+own customized encoding file, let it stay anywhere in your
+computer and later ask bwedit to replace the default factory
+settings by those appearing in your customized file. You
+may also change your default encoding file by going to
+the options dialog box and specifying this file. If this
+option is saved in ~/.bweditrc, later invocations of bwedit
+will read this file at startup instead of the usual default
+<installdir>/lib/bn.enc.
+
+Note that at any point of time you can work with only one
+encoding file. Previous definitions are lost, once you open
+a new encoding file. Moreover, both on-line transliteration
+and the off-line export commands (carried out by the
+helper program `bwconv') use the currently selected encoding
+file. However, a text already exported to a file or to a
+main window will not change by altering the encoding file.
+
+Let us now see how one can write one's customized encoding
+rules in a file. You may look at the default encoding file
+<installdir>/lib/bn.enc for a more detailed description and
+for many examples.
+
+First you must define encoding alphabets to determine the
+category codes for parsing. This involves definition of the
+vowel alphabet, the consonant alphabet and some special
+additional primitives. If the encoding file does not specify
+them, the following default values are used.
+
+VowelAlphabet     : aAeEiILoORuU
+ConsonantAlphabet : bBcCdDfFgGhHjJkKlmMnNpPqQrsStTvVwWxXyYZ^
+SyllableSeparator : _
+HasantaCode       : __
+RefCode           : ^r,r
+RafalaCode        : ^r,r
+JafalaCode        : ^y,y
+ChandrabinduCode  : ^
+
+The VowelAlphabet and the ConsonantAlphabet must consist of
+mutually disjoint characters printable from your keyboard.
+The SyllableSeparator must be a single character, whereas
+the HasantaCode should be a string of one or two characters.
+
+At most four (and at least one) encodings can be defined
+for each of RefCode, RafalaCode, JafalaCode and
+ChandrabinduCode. The encodings must comprise characters
+from the ConsonantAlphabet and should be separated by
+commas without extra spaces.
+
+After you have fixed your encoding alphabets, you should
+define individual codes. A vowel or consonant code can be
+defined in the following formats.
+
+<code> : <char>
+<code> : \<encoding>
+
+The first of this associates <code> with the font character
+<char>. The second associates <code> with the font character
+at the specified <encoding>. Here <char> and <encoding>
+refer to the encoding of the Bengali alphabet in the
+BWFU BDF font files.
+
+As an example, the seventh Bengali consonant #C# is
+defined in the font files in the location C whose 8-bit
+font encoding is 67. The following two declarations are,
+thus, equivalent.
+
+chh  : C
+chh  : \67
+
+Note that: THERE ARE NO DEFAULT ENCODINGS FOR VOWELS OR
+CONSONANTS (though there are default alphabets for vowels
+and consonants). If you forget to encode a character, it
+will not be accessible to you. For example, if there is
+no line in the encoding file with C or \67 on the right side
+of ":", you cannot include the consonant #C# in your text.
+Be careful to be exhaustive.
+
+Punctuation symbols, if not specified otherwise, goes
+directly to the output. But it is possible to alter this
+behavior by specifying encodings of punctuation symbols.
+Punctuation symbols can be encoded ONLY in one of the
+following two ways.
+
+<char1>  : <char2>
+
+to imply that the punctuation symbol <char1> is used to
+stand for the character <char2> in the font file. For
+example,
+
+| : .
+
+implies that the character `|' (vertical bar) is to be used
+to denote the Bengali period.
+
+In the second method, an encoding line like
+
+<char3><char4> : <char5>
+
+specifies that <char5> is the `LIGATURE' of <char3> and
+<char4>. For example,
+
+/- : $
+
+provides an alternative way of writing the Indian currency
+symbol. In the two cases above, <char2> or <char5> can be
+specified either as an explicit character or by its encoding
+in decimal preceded by a backslash.
+
+When bwedit (or bwconv) runs, it first replaces each
+punctuation symbol by the right hand side of the first type
+of encoding, provided that such an encoding is defined. It
+then applies the ligature rules specified by the second type
+of encodings.
+
+Each encoding can be at most ten characters long.
+
+A vowel should be encoded using symbols only from the
+VowelAlphabet. Both a pure vowel and its form (matra) have
+the same encoding. The right side of the encoding line of
+a vowel may refer to the character representing either the
+pure vowel or its matra in the font files. The #a##\14##A# vowel
+sound is to be encoded as the character \14.
+
+Consonants and conjunct consonants are treated identically.
+One must use symbols of ConsonantAlphabet for encoding
+consonants and conjunct consonants. Note that anuswar (M)
+and bisarga (H) can be treated as punctuation symbols,
+because they never take a matra. But we encourage users
+to treat these as consonants.
+
+A single glyph may have more than one encoding. Each
+encoding must come in a single line. No encoding is allowed
+to span over multiple lines. Conversely, if two or more
+glyphs have the same encoding, only one will be effective
+during conversion and which one will be effective depends
+on the implementation of the read_encoding primitives.
+
+A line not having a colon (:) is ignored. A line with a
+colon having no non-white characters on one side (or both
+sides) of the colon is also ignored. That is, the folowing
+eight colon-ed lines have no effect.
+
+:
+       :
+       :
+:
+a:
+a:
+            :b
+:b
+
+Anything in a line that follows a hash (#\35#) is also ignored.
+You may put any number of spaces anywhere in a line (of
+course, not inside words).
+
+The order in which this file is organized is absolutely
+irrelevant (except in the unwanted case where you specify
+the same code for two or more glyphs). Any permutation of
+the lines in this file has the same effect. For that matter,
+the definition of alphabets (for vowels, consonants etc.)
+can occur after all individual encodings and these
+definitions need not even be present in this file at all
+(as long you stick to the default values stated above).

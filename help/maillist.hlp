@@ -1,0 +1,16 @@
+
+                   LIST OF MAIL HEADERS
+
+Below the tool bar is displayed a list of mail headers
+read from a mail folder (e.g. inbox). Only ten headers
+are displayed at a time. Click on the appropriate list
+item for that message to be displayed. If you want to
+see other messages, navigate through the list of all
+mails by selecting the items under the `Mail' menu
+or by using the keys Up/Down/Left/Right/Home/End etc.
+
+Each header consists of four parts: the message number,
+the date of receiving, the sender and the subject. Note
+that messages are sorted in the order they appear in the
+mail folder. More recent messages (i.e., those appearing
+later in the folder) get smaller numbers.

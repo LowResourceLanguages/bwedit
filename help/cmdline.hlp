@@ -1,0 +1,22 @@
+
+                    COMMAND LINE OPTIONS
+
+Usage: bwedit [options]
+The options are
+   -m <file>	Open <file> in main window
+   -t <file>	Open <file> in transliterator window
+   -nm <num>	Open <num> blank main windows
+   -nt <num>	Open <num> blank transliterator windows
+   -bw <file>	Open bwencoded <file>
+   -uu <file>	Open uuencoded <file>
+   -mime <file>	Open MIME encoded <file>
+   -e <file>	Read Roman-to-Bengali encoding from <file>
+		(The default is <INSTALLDIR>/lib/bn.enc)
+   -rm		Open read mail window
+   -k		Open the Keyboard map window
+   -wl		Open the wordlist window
+   -f <size>	Set default font size to <size> points
+		(100, 120, 150, 180, 210, 250, 300 or 360)
+   -hl <num>	Set help level (0, 1, 2 or 3)
+   -h		Print this help message and quit
+   -v		Print version info and quit

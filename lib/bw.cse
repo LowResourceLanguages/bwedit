@@ -1,0 +1,94 @@
+
+bw.cse - File storing case endings for Bengali nouns
+
+----------------------------------------------------------------------------
+
+Copyright (C) 1998-2002 by Abhijit Das [ad_rab@yahoo.com]
+
+This file is part of BWEDIT.
+
+BWEDIT is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+BWEDIT is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with BWEDIT; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+----------------------------------------------------------------------------
+
+¬:4
+¬Âá:4
+¬Ï:4
+¬ÏÚ:4
+³á:0
+´ÚÆÚ:0
+´ÚÆÚ³á:0
+´ÚÆÚÂá:0
+´ÚÆÚÎ:0
+´ÚÆÚÏ:0
+´ÚÆÚÏá:0
+´ÚÆÛ:0
+´ÚÆÛ³á:0
+´ÚÆÛÂá:0
+´ÚÆÛÏ:0
+´ÚÆÛÏá:0
+µÁ:0
+µÁ³á:0
+µÁÏá:0
+µÁá:0
+µÁáÂá:0
+µÁáÏ:0
+µİÑÚ:0
+µİÑÚ³á:0
+µİÑÚÂá:0
+µİÑÚÎ:0
+µİÑÚÏ:0
+µİÑÚÏá:0
+µİÑÛ:0
+µİÑÛ³á:0
+µİÑÛÂá:0
+µİÑÛÏ:0
+µİÑÛÏá:0
+µİÑå:0
+µİÑå³á:0
+µİÑåÂá:0
+µİÑåÎ:0
+µİÑåÏ:0
+µİÑåÏá:0
+½Ú:0
+½Ú³á:0
+½ÚÂá:0
+½ÚÎ:0
+½ÚÏ:0
+½ÚÏá:0
+½Û:0
+½Û³á:0
+½ÛÂá:0
+½ÛÏ:0
+½ÛÏá:0
+Âá:234
+ÄÛ³á:0
+ÄÛµ³á:0
+ÄÛµáÏ:0
+ÄáÏ:0
+Î:2
+Îá:4
+ÎáÂá:4
+ÎáÏ:4
+ÎáÏÚ:4
+Ï:23
+ÏÚ:0
+Ïá:0
+á:1
+áÂá:1
+áÏ:1
+áÏÚ:1
+
+End of bw.cse

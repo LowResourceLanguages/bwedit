@@ -1,0 +1,13 @@
+
+                      OPTION MENU
+
+Document font
+	choose font size and slant for Bengali text in
+	main editor windows (Alt + D)
+
+Edit options
+	configure editor display and mail operations
+	(Alt + O)
+
+Save options
+	save user's preferences in ~/.bweditrc

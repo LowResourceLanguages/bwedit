@@ -1,0 +1,13 @@
+
+             3. ENCODING OF BENGALI CHARACTERS
+
+Here goes a listing of encoding of all characters in the
+Bengali Alphabet as provided by bwedit. This is the default
+encoding. You may, however, change the encoding by editing
+the character map file <installdir>/lib/bn.enc and
+redefining the map. Also note that a character can have
+more than one bwedit encodings. The letter #C#, for example,
+has two encodings, namely `C' and `chh'. The different
+bwedit encodings for a single character are separated by
+commas in the tables.
+

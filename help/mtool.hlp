@@ -1,0 +1,17 @@
+
+                       TOOLBAR (F10)
+
+The toolbar at the top of the mail window consists of a
+series of menu buttons. These buttons perform the following
+functions:
+
+File: Perform file operations, like open and close editor
+      windows, show mails in editor windows, save mails to
+      hard disk, quit the application.
+
+Mail: Read mail folders, navigate through the list of read
+      mails, send new mails and replies.
+
+Option: Customize configurations for the mail operations.
+
+Help: Launch help windows.

@@ -1,0 +1,289 @@
+##############################################################################
+File bwti.enc
+The interface encoding between bwedit and bwti
+Compatible with the latest version of bengali.sty in BWTI
+Please do not edit
+For problems contact the author of bwedit and bwti
+Created on Dec 06 1999
+##############################################################################
+
+############################################################################
+Copyright (C) 1998-2002 by Abhijit Das [ad_rab@yahoo.com]
+
+This file is part of BWEDIT.
+
+BWEDIT is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+BWEDIT is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with BWEDIT; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+############################################################################
+
+0	:
+1	: {\i}
+2	: {\I}
+3	: {\u}
+4	: {\U}
+5	: {\Ri}
+6	: {\e}
+7	: {\oi}
+8	: {\o}
+9	:
+10	:
+11	:
+12	:
+13	:
+14	: {\jf}
+15	: {\rf}
+16	: {\sth}
+17	: {\sn}
+18	: {\sp}
+19	: {\spl}
+20	: {\sph}
+21	: {\sb}
+22	: {\sm}
+23	: {\sl}
+24	: {\hN}
+25	: ru
+26	: rU
+27	: hu
+28	: hW
+29	: gu
+30	: Su
+31	: {\hn}
+32	: {\char32}
+33	: !
+34	: "
+35	: \#
+36	: \$
+37	: \%
+38	: {\thb}
+39	: '
+40	: (
+41	: )
+42	: *
+43	: +
+44	: ,
+45	: -
+46	: .
+47	: /
+48	: 0
+49	: 1
+50	: 2
+51	: 3
+52	: 4
+53	: 5
+54	: 6
+55	: 7
+56	: 8
+57	: 9
+58	: :
+59	: ;
+60	: ..
+61	: =
+62	: {\hb}
+63	: ?
+64	: {\ndb}
+65	: A
+66	: B
+67	: C
+68	: D
+69	: E
+70	: F
+71	: G
+72	: H
+73	: I
+74	: J
+75	: K
+76	: {\hm}
+77	: M
+78	: N
+79	: O
+80	: {\nch}
+81	: Q
+82	: R
+83	: S
+84	: T
+85	: U
+86	: V
+87	: W
+88	: X
+89	: Y
+90	: Z
+91	: {\char91}
+92	: ``
+93	: {\char93}
+94	: {\Ref}
+95	: {\hasanta}
+96	: `
+97	: a
+98	: b
+99	: c
+100	: d
+101	: e
+102	: f
+103	: g
+104	: h
+105	: i
+106	: j
+107	: k
+108	: l
+109	: m
+110	: n
+111	: o
+112	: p
+113	: q
+114	: r
+115	: s
+116	: t
+117	: u
+118	: v
+119	: w
+120	: x
+121	: y
+122	: z
+123	: --
+124	: ---
+125	: {\hl}
+126	: {\char126}
+127	: {\rrg}
+128	: {\kk}
+129	: {\kT}
+130	: {\kt}
+131	: {\kb}
+132	: {\km}
+133	: {\kr}
+134	: {\kl}
+135	: {\kkh}
+136	: {\kkhN}
+137	: {\kkhm}
+138	: {\ks}
+139	: {\gdh}
+140	: {\gn}
+141	: {\gb}
+142	: {\gm}
+143	: {\gl}
+144	: {\ghn}
+145	: {\ngk}
+146	: {\ngkh}
+147	: {\nkh}
+148	: {\ng}
+149	: {\ngh}
+150	: {\ngm}
+151	: {\chch}
+152	: {\chchh}
+153	: {\chchhb}
+154	: {\chn}
+155	: {\jj}
+156	: {\jjb}
+157	: {\jjh}
+158	: {\ggn}
+159	: {\jb}
+160	:
+161	: {\nchh}
+162	: {\nj}
+163	: {\njh}
+164	: {\TT}
+165	: {\Tb}
+166	: {\DD}
+167	: {\NT}
+168	: {\NTh}
+169	: {\ND}
+170	: {\NN}
+171	: {\Nm}
+172	: {\tt}
+173	: {\ttb}
+174	: {\tth}
+175	: {\tn}
+176	: {\tb}
+177	: {\tm}
+178	: {\tr}
+179	: {\tru}
+180	: {\dg}
+181	: {\dgh}
+182	: {\dd}
+183	: {\ddh}
+184	: {\db}
+185	: {\dv}
+186	: {\dvr}
+187	: {\dm}
+188	: {\dhn}
+189	: {\dhb}
+190	: {\nT}
+191	: {\nD}
+192	: {\nt}
+193	: {\ntu}
+194	: {\ntb}
+195	: {\ntr}
+196	: {\nth}
+197	: {\nd}
+198	: {\ndh}
+199	: {\nn}
+200	: {\nb}
+201	: {\nm}
+202	: {\ns}
+203	: {\pT}
+204	: {\pt}
+205	: {\pn}
+206	: {\pp}
+207	: {\pl}
+208	: {\ps}
+209	: {\fl}
+210	: {\bj}
+211	: {\bd}
+212	: {\bdh}
+213	: {\bb}
+214	: {\bl}
+215	: {\vr}
+216	: {\vl}
+217	: {\mn}
+218	: {\mp}
+219	: {\mf}
+220	: {\mb}
+221	: {\mv}
+222	: {\mvr}
+223	: {\mm}
+224	: {\ml}
+225	: {\lk}
+226	: {\lg}
+227	: {\lgu}
+228	: {\lT}
+229	: {\lD}
+230	: {\lp}
+231	: {\lb}
+232	: {\lm}
+233	: {\ll}
+234	: {\shch}
+235	: {\shchh}
+236	: {\shn}
+237	: {\shm}
+238	: {\shl}
+239	: {\shb}
+240	: {\ssk}
+241	: {\sskr}
+242	: {\ssT}
+243	: {\ssTh}
+244	: {\ssN}
+245	: {\ssp}
+246	: {\ssph}
+247	: {\ssm}
+248	: {\sk}
+249	: {\skr}
+250	: {\skl}
+251	: {\skh}
+252	: {\sT}
+253	: {\st}
+254	: {\stu}
+255	: {\str}
+
+##############################################################################
+End of bwti.enc
+##############################################################################

@@ -1,0 +1,40 @@
+
+                   THE WORDLIST WINDOW
+
+Version 3.0 onwards of bwedit comes with a alphabetic
+wordlist of common Bengali words. The spell-checker routine
+makes use of this wordlist. However, corrections are not
+suggested in this version. This can, however, be done
+manually, if the user can have access to a dictionary. The
+wordlist window can be launched for this purpose.
+
+The wordlist window consists of a display area and a set of
+buttons indexed by Bengali letters. When the user clicks
+on a button, all the words in the precompiled wordlist
+starting with the corresponding Bengali letter are displayed
+in the adjacent display area. Since the dictionary file is
+provided already in a sorted order, one can see these lists
+in sorted order.
+
+A short grammatical information regarding the parts of
+speech in which the words can be used are also displayed.
+The following abbreviations are used:
+
+#ib	ibeSF##\14#
+#ibN	ibeSFN#
+#sb^	sb^nAm#
+#ab##\14#	#ab##\14##y#
+#i##\133#	#i##\133##yA#
+
+Note that loading the dictionary and doing some intermediate
+processing on the word lists may take some time, noticably
+in slower machines. However, once the dictionary is loaded,
+it remains in bwedit's memory until you close bwedit
+totally. Also the display of each list for the first time is
+expected to take somewhat longer than all subsequent
+displays of the same list.
+
+On 1 GHz or faster machines, the delays in these dictionary
+operations are not much (say, of the order of a couple of
+seconds). If you have considerably slower machines, please
+have patience!

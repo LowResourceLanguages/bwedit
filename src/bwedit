@@ -1,0 +1,98 @@
+#!/bin/sh
+# Call wish and restart \
+exec wish "$0" -- "$@"
+
+############################################################################
+# bwedit: Version 3.0 (Experimental)
+# Author: Abhijit Das (Barda) [ad_rab@yahoo.com]
+# Last updated: July 06 2002
+############################################################################
+
+############################################################################
+# Copyright (C) 1998-2002 by Abhijit Das [ad_rab@yahoo.com]
+# 
+# This file is part of BWEDIT.
+# 
+# BWEDIT is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+# 
+# BWEDIT is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with BWEDIT; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+############################################################################
+
+############################# ATTENTION ####################################
+#
+# Set the following variables, if the default values do not conform
+# to your system settings.
+
+# The default installation directory is /usr/local/bwedit. You should
+# have root permission for writing in this default installation area.
+# If you do not have root permission, choose a directory in your home
+# area, say, /home/<username>/bwedit and change the following line
+# accordingly.
+
+set installdir "/usr/local/bwedit"
+# set installdir "/home/barda/bwedit"
+
+# Tcl/Tk introduced Unicode features from Version 8.1 onwards. This
+# causes serious display problems for certain Bengali glyphs. More
+# specifically, characters with the encodings 00 to 31 are displayed
+# as special control sequences \x00 - \x1f. This makes a massively
+# confusing output in the editor's text areas. I could not find an
+# easy solution to the problem. I had to relocate the offending
+# characters elsewhere. But since bwfu font files were already almost
+# full as 8-bit font files, I had to use encodings beyond 255.
+# Fortunately the BDF format supports this and new unicode-powered
+# Tcl/Tk versions also make it possible to handle such situations
+# using encoding commands and files. But you will face some hassle
+# in installing things with the new system. If you have older Tcl/Tk
+# version or do not face any display problem under new versions
+# set the following flag to the value 0. The default is 1, since most
+# users are expected to use latest releases of Tcl/Tk.
+# In order to know how to complete your installation with the flag
+# on, read the file ../INSTALL.
+
+set newTclTk 1
+# set newTclTk 0
+
+# Set dpyfont to fixed, if your X windows system does not support
+# a font named `variable'. Tk version 8.0 onwards replaces any
+# non-existing font by `fixed'. If you are using earlier versions
+# of Tk, you must set dpyfont yourself.
+
+set dpyfont variable
+# set dpyfont fixed
+
+# Similarly set hdrfont according as your X installation
+set hdrfont "-*-helvetica-bold-r-*-*-20-*"
+# set hdrfont variable
+# set hdrfont fixed
+
+#################### DO NOT EDIT AFTER THIS LINE ###########################
+
+source "$installdir/bin/global.tcl"
+source "$installdir/bin/encoding.tcl"
+source "$installdir/bin/readfn.tcl"
+source "$installdir/bin/help.tcl"
+source "$installdir/bin/option.tcl"
+source "$installdir/bin/spell.tcl"
+source "$installdir/bin/kbdmap.tcl"
+source "$installdir/bin/typeconv.tcl"
+source "$installdir/bin/mail.tcl"
+source "$installdir/bin/coord.tcl"
+source "$installdir/bin/search.tcl"
+source "$installdir/bin/goto.tcl"
+source "$installdir/bin/refresh.tcl"
+source "$installdir/bin/main.tcl"
+source "$installdir/bin/trans.tcl"
+source "$installdir/bin/cmdline.tcl"
+
+# End of bwedit

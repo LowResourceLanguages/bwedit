@@ -1,0 +1,23 @@
+
+                   THE READ MAIL WINDOW
+
+BWEDIT opens a window to display user's mails. It reads
+local mails from user's mail box (inbox) and displays
+the messages in an interactive fashion. It also provides
+facilities to save e-mails and to open main and
+transliterator windows with text read from the mail
+bodies or from decoded versions of the mails.
+
+The read mail facility of BWEDIT eliminates the need of
+using another mail reader for saving Bengali files mailed
+to you before these files are input to the BW, MIME or
+UU decoding routines of BWEDIT.
+
+Note, however, that BWEDIT is not provided with the power
+to write to your mail box. It only reads your mail box
+and maintains a local copy of the mails. If a new mail
+reaches you when the read mail window of BWEDIT is open,
+the change in your mail box is not registered automatically
+to BWEDIT. You must reread your inbox to see the changes.
+Similarly, there is no scope for deleting mails from
+your inbox.

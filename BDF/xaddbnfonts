@@ -1,0 +1,48 @@
+#!/bin/sh
+
+############################################################################
+# Copyright (C) 1998-2002 by Abhijit Das [ad_rab@yahoo.com]
+#
+# This file is part of BWEDIT.
+#
+# BWEDIT is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# BWEDIT is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with BWEDIT; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+############################################################################
+
+echo "Bengali Writer Font Utilities, Version 1.0"
+echo "------------------------------------------"
+echo "Adding X11 fonts for Bengali alphabet ..."
+bnfontdir="/usr/local/bwedit/BDF"
+xset fp- $bnfontdir
+# if test -e does not work in the following line, try test -f
+if test -e $bnfontdir/fonts.dir
+then
+   echo "fonts.dir found ... skipping"
+else
+   if test -w $bnfontdir
+   then 
+      echo "Creating fonts.dir ..."
+      mkfontdir $bnfontdir
+   else
+      echo "Unable to create fonts.dir"
+      echo "$bnfontdir is not writable"
+   fi
+fi
+xset fp+ $bnfontdir
+echo "... Done"
+echo "The following Bengali fonts are added :"
+xlsfonts | grep bengali
+echo "Have a nice day ..."
+
+# End of xaddbnfonts

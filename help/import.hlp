@@ -1,0 +1,26 @@
+
+                    IMPORT MENU
+
+Read encoding from file
+      Reread the encoding file for Roman-to-Bengali
+      conversion.
+
+Load formatted Roman text
+      Convert 7-bit ASCII files to Bengali text and
+      replace the current content of the editor by the
+      converted text. (Alt-T)
+
+Insert formatted Roman text
+      Convert 7-bit ASCII files to Bengali text and
+      insert the converted text at the current cursor
+      position in the text area. (Alt-R)
+
+Append formatted Roman text
+      Convert 7-bit ASCII files to Bengali text and insert
+      the converted text at the end of the text area.
+
+Roman-to-Bengali conversion rules
+      Show in an auxiliary window information about the
+      Roman-to-Bengali converter. The topics include the
+      conversion rules and the default encoding for the
+      Bengali alphabet. (Shift + F1)

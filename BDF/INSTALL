@@ -1,0 +1,145 @@
+
+                       INSTALLING THE BDF FONTS
+                       ------------------------
+
+   X11 can read fonts in several formats. These are BDF (Bitmap Distribution
+   Format), PCF (Potable Compiled Format) etc. A BDF file is a text file
+   that defines the bitmap patterns for the characters of a font.
+
+   bwedit depends on a family of BDF fonts, namely the `bengali' family.
+   Both normal (upright) and slanted versions of fonts of this family are
+   available at dpi values 100, 120, 150, 180, 210, 250, 300 and 360.
+
+   Before you run bwedit, you must add these fonts to your X11 font
+   list. The installation procedure is easy, but often confusing. You should
+   follow the steps given below:
+
+1. Copy the bdf files (The 32 files bn*.bdf in this directory) to a
+   directory. Let us call this directory <bnfontdir>. Note that the
+   directory name <bnfontdir> must be an absolute name. No relative
+   paths (like ./X11fonts, ~/Xfonts/Bengali etc.) are supported
+   by some of the commands discussed below.
+
+   Though X11 normally works well with BDF files, you may convert the BDF
+   files to the format PCF (portable compiled format) using the program
+   bdftopcf available with most X11 distributions. For example,
+
+      bdftopcf bnr10.100.bdf > bnr10.100.pcf
+
+   generates the file bnr10.100.pcf from the BDF file bnr10.100.bdf.
+
+   In order to save space, you may compress the BDF (and PCF) files as
+
+      compress <bnfontdir>/bnr10.100.bdf
+      compress <bnfontdir>/bnr10.100.pcf
+
+   These generate files bnr10.100.bdf.Z, bnr10.100.pcf.Z etc.
+   Some distributions of X windows also allow one to have gzip-ped
+   versions of BDF and PCF fonts.
+
+
+2. Type at the shell prompt:
+
+      mkfontdir <bnfontdir>
+
+   This command creates a file called fonts.dir in the directory
+   <bnfontdir>. If <bnfontdir> already contains a (valid)
+   fonts.dir, it is not necessary to call mkfontdir.
+
+
+3. Now call xset to add <bnfontdir> to the X11 font search path as
+
+      xset fp+ <bnfontdir>
+
+   This is an important step and leads to unwelcome situations
+   for inexperienced users.
+
+   Note, first of all, that every time you run X11 windows, you must perform
+   this step. Whenever you exit from the window, information about the
+   previous installation of Bengali fonts is lost. If you really intend to
+   make this information *permanent* (so that Bengali fonts are added
+   by default at startup of X windows), you must either copy the BDF (or
+   PCF) files to one of X11's default font directories and update the
+   fonts.dir in that directory, or add <bnfontdir> to your X11
+   font search path. If your X Windows loads fonts using xfs (X Font Server),
+   you may alternatively set the configuration file of xfs (after placing
+   the BDF or PCF fonts in some suitable directory and creating the fonts.dir
+   there). Ask your system administrator to do that for you.
+
+   The second point to be noted in this respect is that xset does
+   not support relative path names. That is, <bnfontdir> must
+   be an absolute path name as discussed earlier.
+
+   Third, xset assumes that <bnfontdir> is a local directory
+   irrespective of whether you run it from the local machine (X server)
+   or from a remote machine (X client) (via telnet, setenv DISPLAY etc.).
+   If your bwedit resides in a remote machine, no problem! It's only required
+   that your X11 fonts must reside in your *local* machine. An alternate
+   font server can be specified by the command xfs. Again disturb
+   your system administrator in order to know how to use that command.
+
+Steps 2 and 3 above can be performed by the shell script xaddbnfonts
+residing in this directory. Edit this shell script and change the line
+
+   bnfontdir="/usr/local/bwedit/BDF"
+
+according as your <bnfontdir>. Then run xaddbnfonts. For
+some operaing systems, a line in this script containing
+
+   if test -e $bnfontdir/fonts.dir
+
+creates trouble. If you face that, change the -e to -f,
+that is, the modified line should be:
+
+   if test -f $bnfontdir/fonts.dir
+
+In order to check if you have properly installed fonts in the `bengali'
+and `bengali2' families, type
+
+   xlsfonts | grep bengali
+
+at the command prompt. This gives a list of Bengali fonts recognized
+by your X server. If the list is empty, you are in trouble. You cannot
+run bwedit. Ask an X11 windows expert to know what went wrong. On the
+other hand, if you get a set of lines of the form
+
+   -*-bengali-medium-o-*-*-*-100-*-*-*-*-*-fontspecific
+   -*-bengali-medium-r-*-*-*-300-*-*-*-*-*-fontspecific
+
+etc., you are ready for the show. In case, you want to view the complete
+character map of these fonts before running bwedit, call xfd as
+
+   xfd -fn "-*-bengali-medium-o-*-*-*-100-*-*-*-*-*-fontspecific"
+   xfd -fn "-*-bengali-medium-r-*-*-*-300-*-*-*-*-*-fontspecific"
+
+Another X application
+
+   xfontsel
+
+displays X11 fonts interactively. Choose the font families `bengali'
+and `bengali2' and select the approprate point size to view the Bengali
+fonts at different sizes. Note that bengali2 fonts may have some
+display problems with the xfd and xfontsel applications. But the
+list command (xlsfonts) must list all the 16 fonts in the bengali2
+family (and 16 more in the bengali family).
+
+----------------------------------------------------------------------------
+
+  Copyright (C) 1998-2002 by Abhijit Das [ad_rab@yahoo.com]
+
+  This file is part of BWEDIT.
+
+  BWEDIT is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  BWEDIT is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with BWEDIT; if not, write to the Free Software
+  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+

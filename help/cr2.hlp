@@ -1,0 +1,215 @@
+
+                   2. CONVERSION RULES
+
+Let us start with an example:
+
+#bAMlA pUb^ vAretr ##\6##kiT b##\27##l p##\15##cilt vAFA.#
+
+Let me tell you the secret. I typed it as
+
+baaM_laa pUrba bhaarater ek_Ti ba^^h_l prachalita vAssA.
+
+If you look at the example carefully, you can guess what's
+going on. Now read on to see how correct your guess is.
+
+First a formal statement of the rules. For the time being,
+let us not be too rigorous and state a little over-
+simplified version of the rules. We will refine them as
+we proceed further.
+
+* The alphabetic characters a, e, i, o, u, A, E, I, O, U
+  and R are defined as VOWEL SYMBOLS.
+
+* Any other alphabetic character and caret (^) are called
+  CONSONANT SYMBOLS.
+
+* Any other character that you can generate from your
+  keyboard is a NONALPHABETIC SYMBOL.
+
+* A VOWEL CODE is a MAXIMAL sequence of (contiguous) vowel
+  symbols. A vowel code is said to be associated with a
+  vowel and/or vowel form when the encoding file specifies
+  a font character for that vowel code. Otherwise the vowel
+  code is said to be undefined.
+
+* A CONSONANT CODE is a MAXIMAL sequence of (contiguous)
+  consonant symbols. A consonant code is said to be
+  associated with a consonant (or conjunct consonant) when
+  the encoding file specifies a font character for that
+  consonant code. Otherwise the consonant code is said
+  to be undefined.
+
+* A TOKEN is either a vowel code or a consonant code or
+  a nonalphabetic symbol.
+
+* bwedit reads the input file sequentially and generate
+  tokens one after another as they appear in the input
+  file.
+
+* When bwedit finds a nonalphabetic symbol, it simply
+  transfers that to the output.
+
+* When bwedit finds a vowel code not (immediately)
+  preceeded by a consonant code, it prints the bengali
+  vowel encoded by the vowel code if the encoding exists
+  else it prints nothing.
+
+* When bwedit finds a consonant code not (immediately)
+  followed by a vowel code, it prints the corresponding
+  bengali consonant character if it is defined else it
+  prints nothing.
+
+* When bwedit finds a consonant code (immediately)
+  followed by a vowel code, it prints the corresponding
+  encoded consonant character surrounded by the appropriate
+  vowel form(s). If the consonant code is undefined, it
+  prints a space for it. If the vowel code is undefined,
+  it prints nothing (i.e. no vowel forms).
+
+That's enough for an example. Consider the input
+
+   bhaarater ek bhaassaa.
+
+bwedit separates the following tokens:
+
+   bh           consonant code
+   aa           vowel code
+   r            consonant code
+   a            vowel code
+   t            consonant code
+   e            vowel code
+   r            consonant code
+   [space]      nonalphabetic symbol
+   e            vowel code
+   k            consonant code
+   [space]      nonalphabetic symbol
+   bh           consonant code
+   aa           vowel code
+   ss           consonant code
+   aa           vowel code
+   .            nonalphabetic symbol
+
+It then applies the above rules to generate
+
+   #vAretr# #\6##k# #vAFA.#
+
+Of course the story does not end here. Suppose you want to
+print #\6##kiT# and you input `ekTi'. You will get #\6##i##\129#.
+This is because `kT' is the encoding of #\129#. You have to
+use an underscore (`_') to separate `k' and `T'. Since `_'
+is not a consonant symbol, the maximal sequence of
+consonant symbols that bwedit finds is `k'. Since `_' is
+also not a vowel symbol, it simply prints the character
+corresponding to `k', that is #k#. bwedit knows that a
+single `_' is a syllable separator. It prints nothing for
+it. Then it finds the consonant code - vowel code
+combination `Ti' and prints #iT#. So the rule here goes
+like this:
+
+* Whenever you want to put two successive consonant
+  characters without a vowel sound appearing between them,
+  separate their codes by an underscore.
+
+* Whenever you want to put two successive vowel characters
+  without a consonant sound appearing between them,
+  separate their codes by an underscore.
+
+The second rule is exemplified by #du##\1##iT#. This requires
+the input `du_iTi' and not `duiTi', because the vowel code
+`ui' is not defined at all.
+
+A related question is how you will print a hasanta (# _#). The
+answer is is use two successive underscores `__'. That is,
+
+Type    To get
+ekTi    #\6##i##\129#
+ek_Ti   #\6##kiT#
+ek__Ti  #\6##k_iT#
+
+And how to print an underscore (\_)? The answer is you
+cannot. The Bengali font files that bwedit works with
+do not define that symbol. You may, however, use a Roman
+font for printing characters not defined in the Bengali
+fonts.
+
+The next topic is: printing #^#,  #\15#, #\14#,  #w#. These are
+very special symbols. They are not stand-alone characters.
+The first three must be associated with a consonant, the
+last one with either a consonant or a vowel. Suppose you
+want to print #aAd^##\15##tA#. You may input `aardrataa' to
+this end. Next suppose that you want the output #gAh^##\16##\14#.
+If you write 'gaarhasthya', you will get #gAV##\16##\14#. This
+is because, `rh' is the encoding of #V#. In this case
+you should tell bwedit that the `r' in `rh' is a `ref'.
+Just write `^r' in place of `r'. (Here `^r' means
+caret + r, and NOT control-r.) That is, input `gaa^rhasthya'
+to get the desired output. The code for `rafala' is, again,
+`r' or `^r'. This comes after the consonant symbol.
+The code for `jafalaa' is `y' or `^y'.  This is
+treated exactly the way `rafalaa' is. That is, type
+`a^rgh^ya' to get #aG^##\14#. Since no confusions are likely
+in this example, one may drop the carets in this case,
+that is, the encoding `arghya' will be fine.
+
+The use of `chandrabindu' is a little bit tricky. Its code
+is simply `^'. When it modifies the sound of a consonant it
+is treated exactly the same way as `jafalaa' or `rafalaa'.
+For example, `gh^y^aak' or `gh^^yaak' to get #Gw##\14##Ak#.
+On the other hand, when it modifies the sound of a vowel,
+you should be a little cautious. Suppose we are interested
+in printing #aAwcl#. If you type `aa^chal', you will get
+#aA l#. Expected! Is it not? Once again read the rules at
+the beginning of the document and consider the fact that
+`^ch' is not a defined consonant code. Write `aa^_chal'
+instead. Finally one exception: #a##\14##ATm#. bwedit
+provides you the vowel sound `ae' to do this. Simply type
+`aeTam". Easy? ne by-product. You can reach #b##\14##A##\148##AelAr#
+by the normal route `byaangaalor' or by the short-cut
+`baengaalor'.
+
+Let's summarize:
+
+Type    To get
+^rk     #k^#
+k^r     #k##\15#
+k^y     #k##\14#
+k^      #kw#
+kae     #k##\14##A#
+
+Objection!! You want to print #\133# instead of #k##\15#. There
+are a few special cases. Write `kr' instead of `k^r' in
+this case. Another table:
+
+Type            To get
+kr              #\133#
+tr              #\178#
+dbhr or dvr     #\186#
+ntr             #\195#
+bhr or vr       #\215#
+mbhr or mvr     #\222#
+sskr            #\241#
+skr             #\249#
+str             #\255#
+
+The last topic: Some special consonant-vowel combinations.
+The last table of this section is devoted to them. These
+special symbols are treated as consonant symbols. So use
+underscore judiciously after them.
+
+Type            To get
+^^rr            #\25#
+^^rrr           #\26#
+^^h             #\27#
+^^hh            #\28#
+^^g             #\29#
+^^S or ^^sh     #\30#
+^^tr            #\179#
+^^nt            #\193#
+^^lg            #\227#
+^^st            #\254#
+
+Versions 2.1 onwards of BWEDIT take care of these special
+consonant-vowel combinations. You need not bother about the
+special encodings for them. That is, typing `ru' produces
+the desired output #\25# and not #ru#. The older encodings
+(like ^^rr etc) continue to work for backward compatibility.

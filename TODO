@@ -1,0 +1,19 @@
+
+                         TO DO LIST FOR BWEDIT
+                         ---------------------
+
+  1. Some more command line arguments might be added. A tentative list is
+     as follows:
+
+     -tohtml infile outfile                # Do Bengali-to-HTML conversion and quit
+     -tolatex infile outfile               # Do Bengali-to-LaTeX conversion and quit
+     -tops infile outfile                  # Do Bengali-to-PS conversion and quit
+
+  2. A beautify-text function can be added in main window.
+  3. The export-to-LaTeX option can take care of the ITRANS encoding of the
+     bengali METAFONT files.
+  4. Full ISCII support to be added. This includes read/write ISCII files etc.
+  5. Bengali->Roman conversion primitive should be added.
+  6. The spell-checker should be incorporated in the main windows.
+  7. Facilities for suggesting corrections for a wrongly spellt word may
+     be added.

@@ -1,0 +1,111 @@
+
+                THE COORDINATOR WINDOW
+
+Whenever you run bwedit, a small window is opened that
+consists of a toolbar and a set of image buttons. We call
+this window the coordinator (or manager) window or may be
+the window coordinator. Unlike the older versions of
+bwedit, no editor windows are opened. The coordinator
+window helps you open and work with one or more editor
+windows.
+
+BWEDIT provides two types of editor windows. We will call
+these `main windows' and 'transliterator windows'
+respectively. A main window allows one to write directly
+in Bengali. A transliterator window, on the other hand,
+helps you edit transliterated Bengali text in a roman font.
+
+The coordinator window provides tools to open one or more
+main windows and/or transliterator windows. It also
+supplies short-cuts to many useful operations which could
+otherwise be invoked from the editor windows. The
+components of this window are as follows:
+
+
+THE TOOL BAR
+
+FILE MENU (F10)
+
+New main window (Alt + 1)
+	Open a blank main window
+Load file in main window (Alt + 3)
+	Open a Bengali text file in a new main window
+
+New transliterator window (Alt + 2)
+	Open a blank transliterator window
+Load file in transliterator window (Alt + 4)
+	Open a 7-bit ASCII text file in a new
+	transliterator window
+
+Read BWencoded file (Alt + 5)
+Read MIME encoded file (Alt + 6)
+READ uuencoded file (Alt + 7)
+	Open an appropriate main or transliterator window
+	with content read from a BW- or MIME- or uu-
+	encoded file. This file should be a saved version
+	of a mail sent using the send mail facility of
+	BWEDIT.
+
+Read Mail (F9)
+	Read user's inbox and show the mails in a window.
+	This window also provides facilities to save mails
+	and open main and transliterator windows with
+	contents read from mails or decoded versions of the
+	mails.
+Send Mail (Shift+F9)
+	Send the contents of a hard disk file or of one
+	of the editor windows via e-mail. Mails can be
+	sent either as plain text or as an encoded text
+	using either BW- or MIME- or uu- encoding scheme.
+
+Quit bwedit (Alt + Q)
+	Quit the application (after closing all other
+	windows opened (if any))
+
+
+OPTION MENU
+
+Select document font (Alt + D)
+	Choose the default point size and slant of Bengali
+	text for main editor windows
+
+Edit main window options
+Edit transliterator window options
+Edit mail options
+	Configure the appearance and functionality of
+	editor and send-mail windows
+
+Save options
+	Save preferences of the user in ~/.bweditrc
+
+
+HELP MENU
+
+View keyboard map (Alt + K)
+	List the mapping of the Bengali alphabet in the font
+	files in an auxiliary window. This window provides
+	tips on how one can input all characters in the
+	main window using the keyboard only. Alternatively
+	one might click on the characters in this window
+	to have those characters inserted at the current
+	cursor position of a main window or the
+	transliteration encodings of these characters in
+	a transliterator window.
+View Bengali wordlist
+	Show alphabetic list of Bengali words
+
+About BWEDIT (F1)
+Roman-to-Bengali conversion rules (Shift + F1)
+Copyright Information
+	Open auxiliary help windows. These windows provide
+	extensive on-line help on the usage of BWEDIT.
+
+
+THE IMAGE BUTTONS
+
+The image buttons below the toolbar are short-cuts to
+the most important operations of the coordinator window.
+Whenever the cursor enters a button in this area, a balloon
+message appears that tells the function of that button.
+Click on the images with the left mouse button to invoke
+these functions.

@@ -1,0 +1,10 @@
+
+                    MAIL DISPLAY AREA
+
+The selected mail is displayed in the display area. Only
+the message body and the fields From, Date and Subject are
+displayed. The displayed message can also be edited for
+sending replies. The message body is automatically quoted
+for editing. Mail read and navigation functions are disabled
+during editing.
+

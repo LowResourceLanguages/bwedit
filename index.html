@@ -1,0 +1,494 @@
+<HTML>
+<HEAD><TITLE>bwedit - A Bengali text editor</TITLE></HEAD>
+
+<BODY BGCOLOR=#FFFFFF>
+<H1 ALIGN=center>bwedit - A Bengali text editor</H1>
+<P><HR NOSHADE>
+<B>[ <A HREF=#feature>Features</A> | <A HREF=#command>Command line</A> |
+<A HREF=#limitation>Limitations</A> | <A HREF=#requirement>Requirements</A>
+| <A HREF=#change>Changes in versions</A> | <A HREF=#download>Download</A>
+]</B>
+<HR NOSHADE><P>
+Welcome to the experimental Bengali text editor <b>bwedit</b>. It runs
+on any X11 window system having the Tcl/Tk shell <b>wish</b>.
+<P>
+<A NAME=feature></A>
+<H2>Features and functionality</H2>
+<UL>
+<P><LI><B>GUI:</B> The graphical interface is very easy-to-use
+and effective.
+<P><LI><B>Multiple editor windows:</B> <B>bwedit</B> version 2.0 onwards
+supports working with multiple editor windows.
+<P><LI><B>Character buttons:</B> There is no need to remember character maps
+for the huge unmanagable Bengali alphabet. Click on the character buttons
+in the keyboard map window to insert these characters at the current
+cursor position.
+<P><LI><B>Keyboard input:</B> All characters can be inserted using keyboard
+only. For characters at higher ASCII positions, control sequences are
+defined as an alternative to the character buttons.
+<P><LI><B>Romanized editing:</B> If you choose, you may write romanized
+Bengali (7 bit ASCII). If you follow a set of simple rules, <B>bwedit</B>
+can convert the transliterated text to Bengali -- on-line. The rules are
+simple, at least I think so!
+<P><LI><B>Export facilities:</B> You can generate HTML, LaTeX and PostScript
+files from Bengali text files.
+<P><LI><B>Tags:</B> Select text and change the display style of the selected
+text to subscript, superscript, underlined text ... You can insert Roman
+characters (and characters corresponding to any X font you have) anywhere
+in the editor text. These tags can be saved and exported making
+<B>bwedit</B> (almost) WYSIWYG.
+<P><LI><B>Spell checking:</B> Version 3.0 onwards of <B>bwedit</B>
+support spell checking in Romanized editing mode.
+<P><LI><B>Mail facilities:</B> <b>bwedit</b> gives you facilities
+to send Bengali documents (Bengali text or transliterated ascii text)
+through e-mail. Since Bengali documents may contain 8-bit data,
+encoding of this to 7-bit ASCII is necessary. In addition to the
+built-in encoder, <b>bwedit</b> provides interface to MIME- and uu-
+encoding techniques. <b>bwedit</b> can read one's local mailbox and
+show the mails interactively. It can also read, decode and show encoded
+files.
+<P><LI><B>Configuration:</B> You may configure <b>bwedit</b> in a
+variety of ways. You may change colors, window size, default font size
+and so on. You may even customize the Roman-to-Bengali encoding scheme
+to define an encoding that suits you better.
+<P><LI><B>Help:</B> <B>bwedit</B> comes with extensive on-line help.
+<P><LI><B>First?</B> To the best of my knowledge, <B>bwedit</B>
+is the first software of its kind.
+</UL>
+<P>
+<B>bwedit</B> has evolved to be a rather sophisticated text editor.
+I still refrain from calling it a <I>text processor</I>. Yes, I think
+a text processor should at the minimum be capable of doing automatic
+right justification. Alas! <b>bwedit</b> cannot do that!
+
+<P>
+The current version of <B>bwedit</B> is 3.0.
+<P>
+<A NAME=command></A>
+<H2>Command line</H2>
+You may call <B>bwedit</B> as
+<PRE>
+   bwedit [options]
+</PRE>
+where the options include:<P>
+<TABLE CELLPADDING=2 BORDER=1>
+<TR><TD>   -m &lt;file&gt;      <TD>Open &lt;file&gt; in main window
+<TR><TD>   -t &lt;file&gt;      <TD>Open &lt;file&gt; in transliterator window
+<TR><TD>   -nm &lt;num&gt;      <TD>Open &lt;num&gt; blank main windows (Maximum 5)
+<TR><TD>   -nt &lt;num&gt;      <TD>Open &lt;num&gt; blank transliterator windows (Maximum 5)
+<TR><TD>   -bw &lt;file&gt;     <TD>Open bwencoded &lt;file&gt;
+<TR><TD>   -uu &lt;file&gt;     <TD>Open uuencoded &lt;file&gt;
+<TR><TD>   -mime &lt;file&gt;   <TD>Open MIME encoded &lt;file&gt;
+<TR><TD>   -e &lt;file&gt;      <TD>Read Roman-to-Bengali encoding from &lt;file&gt;
+<TR><TD>   -rm            <TD>Open read mail window
+<TR><TD>   -k             <TD>Open Keyboard map window
+<TR><TD>   -f &lt;size&gt;      <TD>Set default font size to &lt;size&gt; points
+<TR><TD>   -hl &lt;num&gt;      <TD>Set help level (0, 1, 2 or 3)
+<TR><TD>   -h             <TD>Print this help message and quit
+<TR><TD>   -v             <TD>Print version info and quit
+</TABLE>
+<P>
+Finally, a call like
+<PRE>
+bwedit &lt;file1&gt; &lt;file2&gt; ...
+</PRE>
+opens main editor windows displaying <TT>&lt;file1&gt;</TT>,
+<TT>&lt;file2&gt;</TT>, <TT>...</TT>
+
+<A NAME=limitation></A>
+<H2>Limitations</H2>
+Now that we have seen what <B>bwedit</B> can do, let us see what it cannot.
+<UL>
+<P><LI>The current version of <B>bwedit</B> can not export underlined text.
+<P><LI>If the editor text is tagged with a general X font, the export
+funcion treats the text as if it is written in ASCII ISO-Latin encoding.
+<P><LI>Exporting documents to HTML or LaTeX asks the user of an option:
+whether she wants to save a verbatim copy of the text, that is,
+whether she wants to get an output that is formatted exactly the way
+the input is. If this option is not selected, the only formatting that
+<B>bwedit</B> understands is a paragraph break for a blank line.
+Exporting to PostScript, on the other hand, is in the verbatim mode only.
+<P><LI>Spell checking is not yet enabled in the direct Bengali editing
+mode.
+<P><LI>Spelling corrections are not suggested by this version of
+<B>bwedit</B>.
+<P><LI>A limited ISCII support is provided, but that is far from
+complete.
+<P><LI>There is no facility to convert Bengali text to Romanized text.
+</UL>
+<A NAME=requirement></A>
+<H2>Requirements</H2>
+<OL>
+<LI>The <A HREF=http://www.tcl.tk/>Tcl/Tk shell <B>wish</B></A>
+(<B>bwedit</B> has been tested to work well with Tcl/Tk Versions 8.0
+or higher. For earlier versions (Tcl7.6/Tk4.2 etc.),
+certain keyboard bindings have been found to create some trouble.)
+<LI><A HREF="http://in.geocities.com/ad_rab/bengali/bwfu/X11fonts.html">The
+X11 bitmap fonts</A> available from
+<A HREF="http://in.geocities.com/ad_rab/bengali/">the bwfu
+distribution</A>. (Currently bundled with <B>bwedit</B>.)
+<LI><A HREF="http://in.geocities.com/ad_rab/bengali/bwti/">The TeX fonts and a style file</A>
+available from <A HREF="http://in.geocities.com/ad_rab/bengali/">the
+bwti distribution</A>, if you want to compile the exported output
+in the LaTeX format. (To be downloaded separately.)
+<LI><A HREF="http://in.geocities.com/ad_rab/bengali/bwfu/psfonts.html">The
+PostScript Type 1 fonts</A> available from
+<A HREF="http://in.geocities.com/ad_rab/bengali/">the bwfu
+distribution</A>, for exporting Bengali documents to PostScript files.
+(Currently bundled with <B>bwedit</B>.)
+</OL>
+The first two are absolutely necessary for <B>bwedit</B> to work.
+The others are optional and needed if you want to export Bengali
+documents in the desired format.
+
+<A NAME=change></A>
+<H2>Changes in Version 1.1</H2>
+<OL>
+<LI>A bug related to window resizing has been fixed.
+<LI>Facility for customizing (and saving) various options is included.
+<LI>An on-line Roman-to-Bengali converter is introduced. An editor for
+Roman text is also incorporated.
+<LI>Error messages are added.
+<LI>Extensive on-line documentation is added.
+</OL>
+
+<H2>Changes in Version 1.2</H2>
+<OL>
+<LI>Lots of tags are added (script tags like supersuperscript etc.,
+tags for displaying text in the `fixed' font and in any arbitrary X
+font available in the system).
+<LI>Facility for saving and loading tags is introduced.
+<LI>The export functions have been thoroughly rewritten so that they can
+respect the tags.
+<LI>Facility to prompt the user when she wants to discard unsaved changes
+in the text area is incorporated.
+<LI>New bindings have been defined for the middle and right buttons of
+the mouse.
+</OL>
+
+<H2>Changes in Version 1.3</H2>
+<OL>
+<LI>The on-line display below the text area of the `Edit transliterated
+text' window is added.
+<LI>Facility for importing text directly from the `Edit transliterated
+text' window is incorporated.
+<LI>The toolbar for the `Edit transliterated text' window is redesigned.
+<LI>Facility to prompt the user when she wants to discard unsaved changes
+in the text area of the `Edit transliterated text' window is introduced.
+<LI>Some diagnostic messages are added (for example, when a file or
+options are saved).
+</OL>
+
+<H2>Changes in Version 1.4</H2>
+<OL>
+<LI>A bug related to the window resizing of the `Edit transliterated text'
+window has been fixed.
+<LI>Two more bugs related to the `Save confirm' windows are fixed.
+<LI>A bug in setting the dirty bit is also fixed.
+<LI>A bug related to not refreshing the on-line view in the
+transliterator window during load etc. is fixed.
+<LI>Another bug related to the existence of spaces in a file name etc. is
+also removed.
+<LI>Compatibility with bwti version 3.0 and bwfu version 1.1 is
+incorporated.
+<LI>Two new conjunct consonants are added.
+<LI>The character array is a little bit beautified.
+<LI>In all the previous versions, when a user wants to re-open an
+auxiliary window, she gets an error message. This is taken into account
+in this version. A re-open request now changes the focus to the existing
+window.
+<LI>Facility to send Bengali documents through e-mail is introduced.
+The associated 8-bit to 7-bit encoding routines and the corresponding
+decoding routines are added.
+<LI>Cut-copy-paste facilities are introduced for the transliterator
+window. An old bug for these operations has also been fixed.
+<LI>For export to LaTeX and HTML, the user is provided an option to
+include or omit the header and tailer. For LaTeX this is particularly useful.
+If the user opts to omit the header, the output LaTeX file ceases to
+be a self-sufficient LaTeX input; instead one can readily \input or
+\include the file from another LaTeX source.
+<LI>For export to PS, a target page selector is introduced.
+<LI>The option editor is modified. In particular, the `edit option'
+windows for the main window, the transliterator window and the mail
+operations are integrated into a single window. Switching between
+different option topics is made possible through radio buttons.
+</OL>
+<H2>Changes in Version 1.5</H2>
+<OL>
+<LI> Escape sequence to insert all characters in the main editor window is
+     introduced.
+<LI> Keyboard accelerators (other than the escape sequence) for all vowels,
+     jafala and rafala are introduced for the main window.
+<LI> The `View Keyboard Map' window is redesigned.
+<LI> Keyboard bindings are added for both the main and the transliterator
+     windows for the keys F1 through F10.
+<LI> Keyboard bindings for deleting and joining words and lines are added
+     for both the main and the transliterator windows.
+<LI> The `Cancel' option is introduced for `Save confirm' windows.
+<LI> A documentation bug is removed.
+<LI> Another bug related to an icon name is fixed.
+</OL>
+<H2>Changes in Version 2.0</H2>
+<OL>
+<LI> Facility to open multiple main and editor windows is introduced. All
+     routines are updated accordingly.
+<LI> The coordinator window is added. This contains a tool bar, image
+     buttons and balloon messages.
+<LI> The mail reader is introduced.
+<LI> Keyboard bindings are changed somewhat. In particular, the Alt-M
+     bindings that create troubles with older versions of Tcl/Tk are
+     completely removed. The Alt bindings are made more-or-less uniform
+     for three types of windows (coordinator, main, transliterator).
+<LI> Facility to append transliterated file in main window is added.
+<LI> Facility to insert and append file is introduced for transliterator
+     windows.
+<LI> The help windows (`About bwedit' and `Transliteration rules') have
+     been redesigned. Help topics are displayed so that the user can directly
+     click on them (instead of selecting the topics from a menu). The
+     help windows are no longer fixed size windows. The user can resize
+     them.
+<LI> The character array below the text area is removed. The functionality
+     of this array is imposed on the keyboard map window.
+<LI> Facility to insert transliteration encodings of the Bengali characters
+     to the transliterator window is also incorporated through proper
+     bindings in the keyboard map window.
+<LI> The Roman alphabet is added to the keyboard map window.
+<LI> The `Send Mail' window is reconfigured. More specifically, the user is
+     provided a choice to send either a hard disk file or a main window text
+     or a transliterator window text.
+<LI> The restriction on encoding of transliterator text is removed. All
+     types of encoding are now allowed for each type of mail body (file,
+     main text and transliterator text).
+<LI> The send-mail and options dialog boxes no longer grab the focus. One
+     can continue editing tasks with these dialog boxes open.
+<LI> A bug related to incrementing the dirty bit when digits are input is
+     fixed.
+<LI> The menu binding functions bindings are changed so that they no longer
+     rely on Tk's default action.
+<LI> The options EditRoman (Launch transliterator window at start-up) and
+     CharMap (Show character array below the main text area) are no longer
+     supported.
+<LI> This version does not take into account the command line arguments.
+<LI> The help files are updated a little in order to have conformity with the
+     new GUI as well as to explain things better.
+<LI> The size of diagnostic message dialog boxes is made dynamic so that the
+     text plus all the buttons fit nicely in it irrespective of the user's
+     choice of default fonts.
+<LI> A target window selector is added for the [Transfer] menu of
+     transliterator windows and in the [keyboard map] window.
+</OL>
+<H2>Changes in Version 2.1</H2>
+<OL>
+<LI> A bug in the tag functions is removed. If the user does not select a
+     region and calls these tag functions, this bug used to appear.
+<LI> The conjunct "ndh" was omitted from the keyboard map list in versions
+     1.5 and 2.0. This is properly inserted in this version.
+<LI> A bug related to setting of the dirty bit in the main window when the
+     user invokes the keyboard accelerators (Alt+1), (Alt+2) etc. is fixed.
+<LI> The cursor is changed from the default to the `hand' cursor on clickable
+     items that are not buttons or that do not look like buttons. (Examples:
+     Help window topics, BWEDIT logos and Keyboard map characters)
+<LI> The default text in the target window selector menu button in the
+     keyboard map window is changed from `Select target window' to `Target
+     window : (None)'.
+<LI> Facility to insert Roman text in transliterator window is introduced.
+<LI> The ligatures `r + u', `r + U', ..., `st + u' are properly handled in
+     the transliterator window.
+<LI> Automatic saving and loading of tags are incorporated. Load/Save/Append/
+     Insert operations on main window files are updated accordingly.
+<LI> The command-line options -m, -t, -nm, -nt, -bw, -uu, -mime, -e, -rm, -k,
+     -f, -hl, -h and -v are introduced.
+<LI> The user is allowed to read Roman-to-Bengali conversion encoding from
+     a file of his/her choice. This overrides the system default stored in
+     `&lt;INSTALLDIR&gt;/lib/bn.enc'.
+</OL>
+<H2>Changes in Version 2.2</H2>
+<OL>
+<LI> The `Get File Name' dialog box is augmented so that it shows the
+     directory listing, when the user chooses a directory and tries to
+     commit (by hitting Return or clicking `Ok').
+<LI> Facility to change folder for reading mails is introduced. The folder
+     info above the list of headers is added.
+<LI> Procedures for moving through the list of mails are introduced. These
+     procedures include: Next, Previous, Ten mails forward, Ten mails backward,
+     First, Last, Goto mail with arbitrary number or with arbitrary
+     forward/backward shift.
+<LI> The `Edit mail' option is introduced in the `Read Mail' window. The user
+     can now send contents of the edited mail by the send mail utility.
+<LI> The `Reply-to' field of a mail header is taken care of for sending reply
+     to e-mails.
+<LI> Text search and replace functions are added for both the main and the
+     transliterator windows.
+<LI> Facility for automatic refreshing of lists of target windows is added.
+     This refresh routine is invoked whenever a main or transliterator window
+     is created or closed. The refreshing takes place in the following places:
+     <OL TYPE=a>
+     <LI>list of main windows for transfering transliterated text, maintained
+         in transliterator windows
+     <LI>list of target windows (main and transliterator) maintained by the
+         keyboard map window
+     <LI>list of main and transliterator windows maintained by the sendmail
+         dialog box to select the content of an e-mail
+     </OL>
+     The refresh buttons and menu entries that invoked these functions have
+     been removed. The user no longer has to do it forcibly.
+<LI> A bug related to setting of the source editor window for the send-mail
+     dialog box is removed.
+<LI> The method of printing # in Roman mode is revised. In version 2.1, when
+     the user wants to print # in transliterator windows while (s)he is in
+     the roman mode, (s)he had to come to bengali mode, then type 2 hashes
+     and again switch to roman mode. This means a set of 4 consecutive hashes.
+     This is ugly. Now the user can print # by typing two of them in the roman
+     mode too.
+<LI> A limit (5) on the number of blank main and transliterator windows to
+     launch at start-up is imposed. This does not allow the user to open an
+     arbitrary number of windows and hang the system (accidentally or
+     intentionally).
+<LI> A man page for bwedit is added.
+</OL>
+
+<H2>Changes in Version 3.0</H2>
+<OL>
+<LI>Tcl/Tk introduced Unicode features from Version 8.1 onwards. This
+causes serious display problems for certain Bengali glyphs. More
+specifically, characters with the encodings 00 to 31 are displayed
+as special control sequences \x00 - \x1f. This makes a massively
+confusing output in the editor's text areas. I could not find an
+easy solution to the problem. I had to relocate the offending
+characters elsewhere. But since bwfu font files were already almost
+full as 8-bit font files, I had to use encodings beyond 255.
+Fortunately the BDF format supports this. Now text display is
+carried out by two commands encfrom and encto which essentially
+mimics the Tcl commands "encoding convertfrom" and "encoding convertto".
+These two builtin Tcl routines could have been straightaway used, but they
+call for having a bwfu2.enc file in Tcl's library path. This means that
+the user will have to either have root password for writing bwfu2.enc in
+the Tcl library path or copy the complete Tcl library to his/her own
+home area. Having our customized encfrom and encto relieves the users
+from both these overheads, but we may perhaps have to sacrifice some speed.
+<LI>The relocation of the characters in the original BDF files called
+for a new set of BDF files to be generated. These files (together with
+the older ones) are now bundled with the bwedit distribution. The user
+don't have to download bwfu X11font files separately, but have to go to
+the BDF directory for installing all the BDF files.
+<LI>The encoding files bwfu.enc and bwfu2.enc for BWFU<->Unicode conversions
+are also provided in the distribution, but the bwedit code does not make use
+of these.
+<LI>The sequence of writing and reading tags in main windows (and also for
+bwencoding of mails) has been changed. Now the tags denoting fonts
+(bengali*, english and customfont tags must come earlier than the underline
+and script tags. This introduces incompatibilities with the older
+versions of bwedit.
+<LI>The "Goto line" facility is added to both the main and transliterator
+windows.
+<LI>Export commands are made available for transliterator windows. The
+formats currently supported are Bengali text (under the bwfu encdoing),
+ISCII, HTML, LaTeX and PostScript. A transliterator text does not have
+tags, but the inclusion of text in Roman fonts is taken care of.
+<LI>The export commands from transliterator windows are not
+handled by Tcl codes. A helper application bwconv is written in
+C for doing the conversions. This speeds up conversion considerably,
+though for typical small files this is rather insignificant.
+<LI>The encoding (in bn.enc) has been made much more flexible. One can
+now even work with one's customized definition of vowel and consonant
+symbols. Both bwconv and bwedit follow these flexible rules.
+<LI>A spell checker for Romanized editing is added. This definitely calls
+for a Bengali word database. One reasonably huge database is supplied
+with the distribution.
+<LI>Again spell checking is handled not by bwedit itself, but by a
+C application bwspell. This was absolutely necessary for the sake
+of efficiency. Tcl scripts take huge time just for reading and storing
+the wordlist database.
+<LI>An alphabetic listing of allowed Bengali words can be displayed
+on-line. This may help users manually correct spelling errors.
+<LI>A new command line option <TT>-wl</TT> is added. If this option is specified,
+the word list window is launched at startup.
+<LI>Indexing of help topics in the help window has been changed a bit.
+Menus and submenus are added for neater display.
+<LI>A bug in the Bengali->HTML conversion in main windows is removed.
+<LI>The online-view in the transliterator windows have been made scrollable
+for effective display of long lines.
+<LI>The `Select document font' button in the coordinator window has been
+replaced by the `Show wordlist' button. This operation is seemingly more
+important so that there should be a short-cut for it.
+<LI>A small bug in Roman-to-Bengali conversion is removed.
+<LI>All gif files in the images directory have been changed to the ppm
+format. This has been done not for efficiency, but to avoid possible proprietary
+violations caused by the LZW compression algorithm used by the GIF
+format. (Look at http://burnallgifs.org/.)
+<LI>The application now by default does not show any red color. Previous
+red patches in some image files have been changed to magenta. The reason
+may be aesthetic, or conformity with conventional aesthetics.
+<LI>A decision has been taken to bundle the PostScript font file
+<TT>bnr.gsf</TT> with the distribution.
+<LI>Separate documents on `conversion to ISCII' and the `bwspell spell
+checking algorithm' are provided.
+<LI>The GNU General Public License for copying/modifying/distributing
+is adopted.
+</OL>
+
+<H2>The TODO list</H2>
+<UL>
+<LI> Some more command line arguments might be added. A tentative list is
+     as follows:
+<P>
+<PRE>
+     -tohtml infile outfile                # Do Bengali-to-HTML conversion and quit
+     -tolatex infile outfile               # Do Bengali-to-LaTeX conversion and quit
+     -tops infile outfile                  # Do Bengali-to-PS conversion and quit
+</PRE>
+<P>
+<LI> A beautify-text function can be added in main window.
+<LI> The export-to-LaTeX option can take care of the ITRANS encoding of the
+     bengali METAFONT files.
+<LI> Full ISCII support is to be added. This includes read/write ISCII files etc.
+<LI> Bengali->Roman conversion primitive should be added.
+<LI> Bengali->ISCII conversion primitive should be added.
+<LI> The spell-checker should be incorporated in the main windows.
+<LI> Facilities for suggesting corrections for a wrongly spellt word may
+     be added.
+</UL>
+
+<A NAME=download></A>
+<H2>Download</H2>
+<B>bwedit</B> can be downloaded by http from
+<A HREF="http://in.geocities.com/ad_rab/bengali/bwedit/bwedit3_0.tgz">Yahoo!</A>
+or from
+<A HREF="http://home.iitk.ac.in/~abhijit/download/bwedit3_0.tgz">IITK</A>.
+<P>
+The TeX interface can be downloaded from
+<A HREF="http://in.geocities.com/ad_rab/bengali/bwti/bwti3_0.tgz">Yahoo!</A>
+or from
+<A HREF="http://www2.csa.iisc.ernet.in/~abhij/download/bwti3.0.tar.gz">IISc</A>.
+<P>
+<B>Note:</B> Versions 1.3 and below of <B>bwedit</B> are compatible with
+bwfu fonts version 1.0 and METAFONT files version 2.1. If you download
+version 1.4 onwards of <B>bwedit</B>, you should download version 1.1
+of bwfu and version 3.0 of bwti. If you have already downloaded the older
+version of the fonts and want to install the new version of <B>bwedit</B>,
+I request you to reinstall the Bengali fonts. Any inconvenience arising
+out of this is regretted.
+<P>
+<HR ALIGN=right WIDTH=50% NOSHADE>
+<P>
+<DIV ALIGN=right>
+<B>[<A HREF="http://in.geocities.com/ad_rab/">My home page</A>]
+[<A HREF="http://in.geocities.com/ad_rab/bengali/">Bengali Writer page</A>]</B>
+</DIV>
+<P>
+<FONT SIZE=-1>
+Copyright &copy; 1998-2002 by Abhijit Das
+(<A HREF="mailto:ad_rab@yahoo.com">ad_rab@yahoo.com</A>).
+<P>
+BWEDIT is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+<P>
+BWEDIT is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+</FONT>
+</BODY>
+</HTML>

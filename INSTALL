@@ -1,0 +1,134 @@
+
+                      Installation procedure for bwedit3.0
+                      ------------------------------------
+
+ 1. First install the BDF font files in ./BDF. Read the file BDF/INSTALL
+    in order to know how to do this. Note that this is a difficult process
+    and may create problems to users not reasonably familiar with X windows.
+
+ 2. To check if your X server can read the Bengali fonts, type
+
+       xlsfonts | grep bengali
+
+    This gives you a listing of 32 fonts used by bwedit. The bengali family
+    will be needed with older versions (<= 8.0) of Tcl/Tk. New versions of
+    Tcl/Tk require the bengali2 family. You may install only the required
+    family, if you have to minimize storage. But it may be a better idea to
+    install BDF fonts of both the families.
+
+ 3. Check if you have Tcl/Tk. Just type `wish' at the shell prompt. If you
+    find that something happens (apart from Command not found), you are
+    ready for the show.
+
+    (bwedit might as well run on `expect' (instead of wish). Try it. Do some
+    engineering at the beginning of the script src/bwedit and install it.)
+
+ 4. Optionally install the bwti TeX fonts and style file. These are not
+    bundled with this bwedit distribution, but can be downloaded separately.
+
+ 5. Edit src/bwedit. Change installdir (line 42) according as where you
+    want to install bwedit. The default is /usr/local/bwedit. If you have
+    root permission, go for it. If you don't have root permission and/or if
+    you want to avoid writing in the root area, choose some directory under
+    your home directory. If your home directory is, say, /home/<username>,
+    the choice /home/<username>/bwedit is reasonable.
+
+    In addition you will have to decide a value (0 or 1) for the flag
+    newTclTk. A simple rule to set this is: Use the value 1 if you
+    have versions 8.1 onwards of Tcl/Tk, and the value 0, if you have
+    versions 8.0 or below of Tcl/Tk. In order to know what versions are
+    installed in your machine, type wish at the shell prompt. This will
+    launch a small square blank window and will also issue you a prompt
+    (typically %) in your shell for reading your input. Type
+
+       echo $tcl_version
+
+    and
+
+       echo $tk_version
+
+    at this prompt to know the desired values. (Finally, type exit
+    to terminate the execution of wish.)
+
+ 6. If you have changed the installation directory in Step 5, you must also
+    do the following:
+
+    - Edit Makefile. Change INSTALL_DIR, BIN_DIR and MAN_DIR (Lines 30, 33
+      and 36). INSTALL_DIR should be the same as installdir of bwedit.
+      BIN_DIR should be a directory in your search path, where you have
+      write permission. Many users, for example, include ~/bin in their
+      execution search path. The MAN_DIR is necessary, only if you want
+      to install the bwedit man-page. If you cannot decide a suitable
+      directory for it, forget it, and don't try "make installman" in
+      Step 7.
+
+    - Edit src/bwconv.c and src/bwspell.c and change ENCFILE, BWTIENCFILE,
+      ISCIIENCFILE, DICTFILE and CASEFILE (Lines 43-46). (Note that both
+      these codes do not require all the 5 values. Change only those
+      appearing in the #define statements.) These special library files
+      must reside in the directory <installdir>/lib and must have the
+      respective names bn.enc, bwti.enc, iscii.enc, bw.dct and bw.cse.
+
+ 7. Type
+
+       make install
+
+    at the command prompt. In addition, if you are interested in installing
+    the bwedit man page, type:
+
+        make installman
+
+ 8. Now run bwedit as
+
+        bwedit
+
+    at the shell prompt. You may have to specify the complete path of bwedit,
+    if your BIN_DIR (See Step 6) is not in your execution search path. If you
+    use csh, open a new shell for the new command bwedit in BIN_DIR to get
+    registered. bwedit supports a number of command-line options. Run
+
+        bwedit -h
+
+    to have an overview of the command line options. Alternatively, read
+    the bwedit manpage or use the on-line help of bwedit.
+
+ 9. The examples directory has some small example files. Here is a short
+    description of these:
+
+    example1.bng   History of the Roman calendar to be loaded in main windows
+    example2.btx   The same but to be loaded in transliterator windows
+    example3.bng   A file showing all the tags supported by main windows
+    allchars.bng   Another main window file showing all the characters
+
+    You should see legible Bengali text, when you load these example files
+    in appropriate windows. If bwedit refuses to run after complaining that
+    "I cannot see Bengali fonts", then your installation of the Bengali
+    fonts was not successful. Install them properly and rerun bwedit.
+    If you do not see intelligible texts even after loading the example
+    files, check again, if you have followed all the above steps carefully.
+    If yes and you still face a problem, try after swapping the value
+    of newTclTk in src/bwedit and then reinstalling. If you still have
+    complaints, write to me (ad_rab@yahoo.com).
+
+Enjoy bwedit...
+
+------------------------------------------------------
+
+Copyright (C) 1998-2002 by Abhijit Das [ad_rab@yahoo.com]
+
+This file is part of BWEDIT.
+
+BWEDIT is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+BWEDIT is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with BWEDIT; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+

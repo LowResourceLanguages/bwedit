@@ -1,0 +1,13 @@
+
+3.4 DIGITS AND PUNCTUATION SYMBOLS
+
+The digits #0123456789# can be typed as 0123456789.
+Similarly the encodings of most punctuation symbols are
+obvious. The only non-trivial ones are:
+
+Type    To get
+$	#$#
+.	#.#
+..	#<#
+~	#~#
+

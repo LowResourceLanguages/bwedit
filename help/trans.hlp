@@ -1,0 +1,22 @@
+
+                 TRANSLITERATOR WINDOW
+
+The transliterator window provides another text area. You
+can type here in 7 bit ASCII in a Roman font. The content
+of this text area should be a transliterated version of the
+target Bengali text. Your Bengali-to-Roman transliteration
+should follow a specific set of simple rules, so that when
+BWEDIT applies the inverse transliteration on the
+transliterator text, you get the desired output. As you
+type in Roman in this text area, an on-line view below the
+text area shows the Bengali equivalent of the current line
+being edited. This helps one check one's transliteration
+on-line. 7 bit ASCII files edited in this window can be
+saved (to hard disk files), loaded etc.  In addition, the
+transliterated text (or some specific parts of it) can be
+converted to Bengali and transfered to main editor windows.
+
+See the `Roman-to-Bengali transliteration rules' for a
+discussion on how BWEDIT converts transliterated text to
+Bengali. This tells you how to produce such text to get the
+desired output.

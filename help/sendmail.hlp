@@ -1,0 +1,45 @@
+
+               THE SEND MAIL DIALOG BOX
+
+This dialog box is an interface to send e-mails. The
+e-mail ids of the recipients should be typed in the entry
+labeled "To: ". In case you want to send the e-mail to more
+than one persons, use comma to separate their e-mail ids.
+The subject of the mail can be typed in the second entry.
+
+The mail body can be read from one of the following:
+
+1. A hard disk file
+2. The text of a main editor window
+3. The text of a transliterator window
+4. Edited mail in the `Read mail' window.
+
+For the options 2 and 3 you must specify a window from
+which BWEDIT will read the mail text. BWEDIT automatically
+refreshes the list of currently open main and transliterator
+windows whenever an editor window is opened or closed. For
+the first option, on the other hand, you should supply a
+file name in the hard disk. Finally, for the fourth option,
+you must have the `read mail' window open in the `Edit
+reply' mode.
+
+The e-mail message can be sent in one of the following
+four formats:
+
+1. Plain text
+2. BW encoded text
+3. MIME encoded text
+4. UU encoded text
+
+7-bit ASCII text files can be sent as Plain text, whereas
+files containing characters outside the ASCII range 32 - 127
+should better be encoded before sending. Bengali text files
+typically consist of characters outside the range 32 - 127.
+Therefore, encode them before sending them through e-mail.
+The BW encoding scheme is in-built in BWEDIT whereas MIME
+and UU encoding and decoding routines are external to the
+program. Your recipient may not have these external
+routines installed in his / her machine. You are, therefore,
+encouraged to use the BW encoding scheme. In addition,
+this is the only encoding scheme that takes care of the
+text tags.

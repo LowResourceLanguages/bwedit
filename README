@@ -1,0 +1,59 @@
+
+                       BWEDIT - A Bengali text editor
+
+                           Version 3.0 (July 2002)
+
+Welcome to the experimental Bengali text editor bwedit. It runs on any X11
+window system having the Tcl/Tk shell wish. It provides a very easy-to-use
+and effective graphical interface. This experimental version of bwedit has
+evolved to be a rather sophisticated text editor. It supports two editing
+modes: writing directly in Bengali and writing in Romanized Bengali.
+It incorporates many features commonly found in modern editors. In addition,
+it is capable of converting Bengali text files to html, LaTeX, ISCII and
+PostScript. Spell checking facilities are also provided for the Romanized
+editing mode. Limited facilities for reading and sending mails are also
+included.
+
+
+Requirements
+
+  1. The Tcl/Tk shell wish
+  2. The X11 bitmap fonts available from the bwfu distribution.
+  3. The TeX fonts and a style file available from the bwti distribution, if
+     you want to compile the exported output in the LaTeX format.
+  4. The PostScript Type 1 fonts available from the bwfu distribution, for
+     exporting Bengali documents to PostScript files.
+
+The first two are absolutely necessary for bwedit to work. The others are
+optional and needed, if you want to export Bengali documents to the desired
+formats. The X11 and PostScript fonts are bundled with bwedit, whereas
+the TeX interface bwti can be downloaded from my pages. Tcl/Tk can be
+downloaded from http://www.tcl.tk/.
+
+
+Installation
+
+Read the file ./INSTALL and BDF/INSTALL for knowing about the installation
+procedures.
+
+
+--------------------------------------
+
+Copyright (C) 1998-2002 by Abhijit Das [ad_rab@yahoo.com]
+
+This file is part of BWEDIT.
+
+BWEDIT is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+BWEDIT is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with BWEDIT; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+

@@ -1,0 +1,26 @@
+
+                       HELP MENU
+
+Show keyboard map (Alt + K)
+        Show the keyboard map for the Bengali alphabet.
+        If you choose the target window of the keyboard map
+        window to be one transliterator window and click on
+        a character of the map window, the transliteration
+        code corresponding to that character is inserted
+        at the cursor position of the transliterator window
+        chosen.
+
+Show Bengali wordlist
+        Show sorted list of Bengali words allowed by the
+        built-in dictionary database. Note that loading the
+        dictionary may take some time.
+
+About bwedit (F1)
+        Launch this help window
+Roman-to-Bengali conversion rules (Shift + F1)
+        Launch a help window for displaying the
+        transliteration rules for writing the desired
+        input text in Roman. This also lists the default
+        encodings of the Bengali characters.
+Copyright notice
+        Display copyright information

@@ -1,0 +1,25 @@
+
+                       TOOLBAR (F10)
+
+The toolbar at the top of the main window consists of a
+series of menu buttons. These buttons perform the following
+functions:
+
+File: Perform file operations, like load and save
+      transliterated text files, open and close editor
+      windows and quit the application.
+
+Edit: Edit operations - clear, cut, copy, paste, search and
+      spell checking.
+
+Export: Transfer editor text to main window or export the
+      same to hard disk files in one of the formats:
+      Bengali text, HTML, ISCII, LaTeX and PostScript.
+
+Mail: Read mails, send contents of the editors through
+      e-mail, read encoded files, edit mail options.
+
+Option: Customize configurations for the main editor window,
+      the transliterator window and mail operations.
+
+Help: Launch help windows.

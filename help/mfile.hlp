@@ -1,0 +1,28 @@
+
+                     FILE MENU (F10)
+
+New main window
+	Open a blank main editor window (Alt + 1)
+New transliterator window
+	Open a blank transliterator window (Alt + 2)
+Show mail in main window
+	Open a new main editor window and display the
+	body of the currently selected mail in it (Alt + 3)
+Show mail in transliterator window
+	Open a new transliterator editor window and display
+	the body of the currently selected mail in it
+	(Alt + 4)
+BWdecode mail and show
+	BWdecode the content of the currently selected
+	mail and launch a new main window to display the
+	decoded output (Alt + 5)
+UUdecode mail and show
+	UUdecode the content of the currently selected
+	mail and launch a new main window to display the
+	decoded output (Alt + 7)
+Save mail
+	Save the body of the currently selected mail
+	(without the headers) to a hard disk file (F3)
+
+Close	Close the mail reader window (Alt + C)
+Quit	Quit the current session of BWEDIT (Alt + Q)

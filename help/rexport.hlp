@@ -1,0 +1,43 @@
+
+                    EXPORT MENU
+
+The transilerated text in Roman can be converted to Bengali
+and inserted at the current insert cursor position in a
+main editor window. Three options are provided:
+
+1. The entire text in the text area can be transfered
+   (Alt + T).
+2. The line containing the insert cursor currently in the
+   text area can be transfered (Alt + F).
+3. The text selected in the text area can be transfered
+   (Alt + X).
+
+The last two options inserts a new line character after
+the converted text in the main editor window.
+
+In order to tell BWEDIT the particular main window where
+you want to transfer the text, select the target window
+by choosing an appropriate item from the submenu under
+the first item of the edit menu. BWEDIT automatically
+refreshes this list of windows, whenever a new main window
+is created or an existing one is closed. If the target
+window is not selected or does not exist, nothing happens
+when a transfer request occurs.
+
+Version 3.0 introduces new features in the Export options.
+You can export transliterated files directly to hard disk
+files in one of the following formats:
+
+1. Bengali - text in the BW font encoding (Alt + B)
+2. HTML - for viewing in web browsers (Alt + H)
+3. ISCII - text in the ISCII encoding (Alt + E)
+4. LaTeX - for typesetting using the bwti package (Alt + L)
+5. PostScript - for printing (Alt + P)
+
+In the previous versions this has been made possible
+(except the ISCII support) by transfering text to a main
+window and then calling the appropriate export routines.
+
+Exporting from transliterator windows is carried out by an
+independent executable (bwconv) that can be compiled from
+a C source code bundled with this distribution.

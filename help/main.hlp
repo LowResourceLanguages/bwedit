@@ -1,0 +1,41 @@
+
+                 THE MAIN EDITOR WINDOW
+
+The main editor window provides a text area for direct
+typing of Bengali text. You should know the keyboard map
+for the Bengali font files in order to use this editor.
+The item [Show keyboard map] under the [Help] menu of the
+toolbar in this window displays the character maps for all
+the glyphs in the Bengali alphabet.  Characters with ASCII
+values between 32 and 126 can be directly keyed in from
+the keyboard. The Bengali fonts have many characters
+outside this range. In order to type such characters you
+should hit the Escape button of your keyboard, type the
+appropriate ASCII value and then once again hit Escape.
+This inserts the characters with the corresponding ASCII
+values at the current cursor position in the main editor
+window. For certain frequently used symbols that are
+assigned ASCII values not between 32 and 126, some special
+control sequences are provided (for example, #\1# can be
+inserted as Control-i).  The keyboard map shows detailed
+listing of all these bindings. Also look at the section
+on `Keyboard / mouse bindings'.
+
+There is an alternative way to insert characters in the
+main editor window.  Click with the left mouse button on
+a character in the  charater map array (discussed in the
+last paragraph). The character array is also capable of
+supplying the encoding of the Bengali characters to the
+transliterator windows. Since you may work with many
+main and transliterator windows simultaneously, you must
+first choose a target window to send the desired text.
+The character map helps you type in Bengali without
+memorizing the keyborad map. It's, howver, expedient (may
+be for the sake of speed) to remember the character mapping
+of the most frequently occurring symbols in the Bengali
+alphabet.
+
+In order to insert roman text or use Bengali font at
+different font sizes and slants, one should use the
+built-in `tags' of BWEDIT. See the section on `Tag menu'
+for more details.

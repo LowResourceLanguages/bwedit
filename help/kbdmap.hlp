@@ -1,0 +1,22 @@
+
+            THE KEYBOARD MAP WINDOW
+
+This window lists the mapping of the Bengali alphabet in
+the font files. It provides tips on how one can input all
+characters in the main window using the keyboard only.
+Alternatively one might click on the characters in this
+window to have those characters inserted at the current
+cursor position of a main window or the transliteration
+encodings of these characters in a transliterator window.
+
+In order to select a target window for inserting text
+(whenever click requests occur), one must first click
+the button [Select target window] at the top of the
+keyboard map window. This gives a listing of all main and
+transliterator windows open at that time. This list is
+updated automatically whenever a new main or transliterator
+window is opened or an existing one is closed. Note that if
+no target window is selected or if the selected target
+window exists no longer, the click requests on the
+characters of the map window produce no visible output (not
+even error messages).

@@ -1,0 +1,22 @@
+
+                     1. INTRODUCTION
+
+This is an on-line help on the Roman-to-Bengali conversion
+rules provided by bwedit's Romanized Bengali editing
+operation. Bwedit can convert text written in Roman
+in a specific format to a text in Bengali. You should follow
+a set of `simple rules' while writing the text in Roman, in
+order to get the desired output. The syntax for writing
+such text is described and illustrated here.
+
+The text you write (minus certain control characters) reads
+almost the same as that when you transliterate the output
+Bengali text into the Roman font. However, there are a few
+subtleties which you must understand before you use the
+converter. At this point I need to emphasize that you must
+know the proper spelling of the Bengali words (which you
+intend to write). The spell-checker routine can help you
+detect spelling mistakes as well as conversion failures. If
+you feel that the conversion rules are too rigid and
+difficult, you may write to me at ad_rab@yahoo.com.
+

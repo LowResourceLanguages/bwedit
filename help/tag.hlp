@@ -1,0 +1,44 @@
+
+                       TAG MENU
+
+One should use the built-in tags for the main editor
+windows in order to change the display style of the
+selected text in main windows. This version of BWEDIT
+supports the following display styles:
+
+Normal
+	set display style of selected region to normal
+
+Underline
+	underline selected region
+
+Superscript
+	change text in selected region to superscript
+Supersuperscript
+	change selected region to superscript of superscript
+Subsuperscript
+	change selected region to subscript of superscript
+Subscript
+	change text in selected region to subscript
+Subsubscript
+	change selected region to subscript of subscript
+Supersubscript
+	change selected region to superscript of subscript
+
+Select font
+	set font of the selected region to either Bengali
+	or `fixed' or a general X11 font
+
+Load tags	read tags from a file (Alt+G)
+Save tags	save tags to a file (Alt+V)
+
+Version 2.1 onwards of BWEDIT supports automatic loading
+and saving of tags. For the text file <filename> the
+default file where the tag information are stored, is
+<filename>.tags. For example, if you edit a file named
+myfile.bng, then the tags are stored in and retrieved from
+the file myfile.bng.tags.  Each of the functions
+load/save/append/insert is capable of reading/writing the
+tags in the default filename. The `Save tags' and `Load
+tags' commands can be used to write the tags to or to read
+the tags from other files.

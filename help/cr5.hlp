@@ -1,0 +1,41 @@
+
+              5. INSERTING TEXT IN ROMAN FONT
+
+Version 2.1 onwards of BWEDIT supports insertion of text in
+Roman font in the transliterator window. The toggling
+character is #\35#. Text in Roman font should be delimited
+by two #\35#'s. The new line character also closes the scope
+of the Roman font, if active at the end of a line. That is,
+every line starts in the Bengali writing mode. If you are
+willing to continue typing in Roman in the next line too,
+you should reinvoke the roman font by typing another #\35#
+at the beginning of the new line. The Bengali-Roman
+toggling can be invoked multiple times in a given line.
+
+All these are clarified in the following examples:
+
+EXAMPLE 1
+Input:	aami #\35#I Ich Je#\35#
+Output:	#aAim# I Ich Je
+
+EXAMPLE 2
+Input:
+	tumi #\35#You
+	Du Tu#\35#
+Output:
+	#tuim# You
+	#Du Tu#
+
+EXAMPLE 3
+Input:
+	se #\35#She
+	#\35#Sie Elle
+Output:
+	#es# She
+	Sie Elle
+
+EXAMPLE 4
+Input:	#\35#They#\35# taaraa #\35#Sie#\35# #\35#Elles#\35#
+Output:	They #tArA# Sie Elles
+
+Finally, note that the character #\35# is obtained by #\35##\35#.

@@ -1,0 +1,43 @@
+
+                 THE TEXT AREA (Alt + T)
+
+The text area displays 8-bit text files in a Bengali font.
+You can edit files in the text area. You can directly type
+
+ * all consonant symbols #( b##\14##A##\162##nbN^ )#
+ * all vowel forms #( kAr )#
+ * two vowels (#a# and #o#) #( ##\21##rbN^ )#
+ * all digits #( sMK##\14##A )#
+ * all punctuation symbols #( Yitic##\31## )#
+
+using the keyboard only. All other characters, that is
+
+ * vowels (except #a# and #o#)
+ * conjunct consonants #( Yu##\130##A##\135##r )#
+ * special symbols like #\14#, #\25# etc.
+
+can be inserted at the current cursor position of the text
+area by clicking on the characters of the keyboard map array
+that can be opened by selecting the menu item
+[Help]/[Show keyboard map]. These characters can also be
+inserted using special keyboard bindings. Let us list
+these bindings in this context:
+
+Control + a	Insert #a# at the current cursor position
+Control + A	Insert #aA# at the current cursor position
+Control + i	Insert #\1# at the current cursor position
+Control + I	Insert #\2# at the current cursor position
+Control + u	Insert #\3# at the current cursor position
+Control + U	Insert #\4# at the current cursor position
+Control + R	Insert #\5# at the current cursor position
+Control + e	Insert #\6# at the current cursor position
+Control + E	Insert #\7# at the current cursor position
+Control + o	Insert #\8# at the current cursor position
+Control + O	Insert #o# at the current cursor position
+
+Control + y	Insert #\14# at the current cursor position
+Control + r	Insert   #\15# at the current cursor position
+
+ESC<NUM>ESC	Insert at the current cursor position the
+		character whose ASCII value is the positive
+		integer <NUM> (between 0 and 255)

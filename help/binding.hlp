@@ -1,0 +1,217 @@
+
+                      KEYBOARD BINDINGS
+
+COORDINATOR WINDOW
+
+Alt + 1	   Open a blank main window
+Alt + 2	   Open a blank transliterator window
+Alt + 3	   Open a file in a new main window
+Alt + 4	   Open a file in a new transliterator window
+Alt + 5	   Read a BWencoded file
+Alt + 6	   Read a MIME encoded file
+Alt + 7	   Read a uuencoded file
+
+Alt + D	   Choose document font
+Alt + K	   Show keyboard map
+Alt + Q	   Quit editor
+
+F1	Launch this help window
+Shift-F1
+	Launch a help window to display Roman-to-Bengali
+	transliteration rules
+F9	Read mail
+Shift+F9
+	Send mail
+F10	Activate menu
+
+
+MAIN WINDOW
+
+Alt + 1	   Open a blank main window
+Alt + 2	   Open a blank transliterator window
+Alt + 5	   Read a BWencoded file
+Alt + 6	   Read a MIME encoded file
+Alt + 7	   Read a uuencoded file
+
+Alt + A	   Append file
+Alt + C	   Close this main window
+Alt + D	   Choose document font
+Alt + G	   Load tags from a file
+Alt + H	   Export document to HTML
+Alt + I	   Insert file
+Alt + L	   Export document to LaTeX
+Alt + K	   Show keyboard map
+Alt + N	   New file
+Alt + O	   Edit options
+Alt + P	   Export document to PostScript
+Alt + Q	   Quit editor
+Alt + R	   Insert transliterated Roman file
+Alt + S	   Save as file
+Alt + T	   Load transliterated Roman file
+Alt + V	   Save tags in a file
+
+F1	Launch this help window
+Shift-F1
+	Launch a help window to display Roman-to-Bengali
+	transliteration rules
+F2	Load file
+F3	Save file
+F4	Cut selected text
+F5	Copy selected text
+F6	Paste selected text
+F7	Start marking
+F8	End marking
+F9	Read mail
+Shift-F9
+	Send mail
+F10	Activate menu
+F11	Search string
+
+
+TRANSLITERATOR WINDOW
+
+Alt + 1	   Open a blank main window
+Alt + 2	   Open a blank transliterator window
+Alt + 5	   Read a BWencoded file
+Alt + 6	   Read a MIME encoded file
+Alt + 7	   Read a uuencoded file
+
+Alt + A	   Append file
+Alt + C	   Close this window
+Alt + F	   Transfer current line to main window
+Alt + I	   Insert file
+Alt + K	   Show keyboard map
+Alt + N	   New file
+Alt + O	   Edit options for this window
+Alt + Q	   Quit current session of BWEDIT
+Alt + S	   Save the Roman file as a named file
+Alt + T	   Transfer whole text to main window
+Alt + X	   Transfer selected text to main window
+
+F1	Launch this help window
+Shift-F1
+	Launch a help window for displaying Roman-to-Bengali
+	transliteration rules
+F2	Load file
+F3	Save file
+F4	Cut selected text
+F5	Copy selected text
+F6	Paste selected text
+F7	Start marking
+F8	End marking
+F9	Read mail
+Shift-F9
+	Send mail
+F10	Activate menu
+F11	Search string
+F12	Check spelling
+Shift-F12
+	Clear spelling error marks
+
+
+TEXT AREAS
+
+Control + Delete	Delete from cursor to end of word
+Control + Backspace	Delete from start of word to cursor
+Control + w		Delete word
+Control + j		Join two words
+
+Control + Shift + Delete
+		Delete from cursor to end of line
+Control + Shift + Backspace
+		Delete from start of line to cursor
+Control + L	Delete line
+Control + J	Join two lines
+
+Arrow keys	Move
+Page up		Scroll up one screen
+Page down	Scroll down one screen
+Home		Go to line start. Clear selection.
+Shift-Home	Go to line start. Extend selection.
+Control-Home	Go to start of text. Clear selection.
+End		Go to line end. Clear selection.
+Shift-End	Go to line end. Extend selection.
+Control-End	Go to end of text. Clear selection.
+
+The following are applicable for the main window only:
+
+Escape + <number> + Escape
+	Insert character with ASCII value <number>
+Control + a	Insert #a# at current cursor position
+Control + A	Insert #aA# at current cursor position
+Control + i	Insert #\1# at current cursor position
+Control + I	Insert #\2# at current cursor position
+Control + u	Insert #\3# at current cursor position
+Control + U	Insert #\4# at current cursor position
+Control + R	Insert #\5# at current cursor position
+Control + e	Insert #\6# at current cursor position
+Control + E	Insert #\7# at current cursor position
+Control + o	Insert #\8# at current cursor position
+Control + O	Insert #o# at current cursor position
+Control + y	Insert #\14# at current cursor position
+Control + r	Insert   #\15# at current cursor position
+
+
+MAIL READER WINDOW
+
+Alt + 1	   Open a blank main window
+Alt + 2	   Open a blank transliterator window
+Alt + 3	   Display currently selected mail in a main window
+Alt + 4	   Display currently selected mail in a
+	   transliterator window
+Alt + 5	   Display in a main or transliterator window the
+	   currently selected mail after bwdecoding it
+Alt + 7	   Display in a main window the currently selected
+	   mail after uudecoding it
+
+Alt + C	   Close the mail reader window
+Alt + E	   Edit reply / Done editing
+Alt + O	   Edit mail options
+Alt + Q	   Quit BWEDIT
+Alt + R	   Reread inbox
+
+F1	   Launch this help window
+Shift + F1
+	   Launch a help window to display Roman-to-Bengali
+	   transliteration rules
+F3	   Save mail
+F9	   Send reply to mail
+Shift + F9
+	   Send mail
+F10	   Activate menu
+
+Up	   Show previous mail (Also p, -)
+Down	   Show next mail (Also n, +)
+Left	   Ten mails backward (Also P)
+Right	   Ten mails forward (Also N)
+Home	   Show first mail
+End	   Show last mail
+#\35#	   Goto mail
+PgUp	   Show next page of mail body
+PgDn	   Show previous page of mail body
+
+
+OTHER TEMPORARY WINDOWS
+
+Escape	   Close the corresponding window
+
+
+                        MOUSE BINDINGS
+
+MAIN EDITOR WINDOW
+
+Left	  Move the insert cursor at the point of clicking
+Left motion
+	  Select text
+Middle	  Launch a menu for Edit, Tag and Font operations
+Right	  Launch a menu for File, Import, Export and Mail
+	  operations
+
+
+TRANSLITERATOR WINDOW
+
+Left	  Move the insert cursor at the point of clicking
+Left motion
+	  Select text
+Middle	  Launch a menu for edit and transfer operations
+Right	  Launch a menu for File and Mail operations

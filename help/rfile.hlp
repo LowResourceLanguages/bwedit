@@ -1,0 +1,24 @@
+
+                     FILE MENU (F10)
+
+New main window (Alt+1)
+	  open a blank main editor window
+New transliterator window (Alt+2)
+	  open a blank transliterator window
+
+New	  Clear File Name and text area (Alt + N)
+Load	  Load a file for editing (F2)
+Insert	  Insert a file at the current cursor position
+	  (Alt + I)
+Append	  Insert a file at the end of the editor text
+	  (Alt + A)
+Save	  Save the file currently being edited (F3)
+Save As	  Save the content of the editor to a named file
+	  (Alt + S)
+
+Read encoding from file
+	  Reread Roman-to-Bengali conversion encoding
+	  from a user-specified file
+
+Close	  Close this transliterator window (Alt + C)
+Quit	  Quit the current session of BWEDIT (Alt + Q)

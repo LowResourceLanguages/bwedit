@@ -1,0 +1,11 @@
+
+      TRANSLITERATOR WINDOW : THE ON-LINE VIEW
+
+A one-line display below the text area shows the
+transliterated version of the Roman text contained in
+the line currently edited in the text area (that is,
+the line containing the insert cursor in the text area).
+This helps the user to have an on-line check of what
+(s)he is writing in the text area, before this text
+(or parts of it) are transfered to the main editor
+window or exported to a file.

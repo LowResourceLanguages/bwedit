@@ -1,0 +1,3 @@
+getFileName does not work if the file does not exist (problem with glob). (fixed)
+a bug related to checking indices with setting tagged text. (fixed)
+export-to-PS creates trouble: in `set prevfont $fontstack($tos)' $tos = -1 (not fixed)

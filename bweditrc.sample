@@ -1,0 +1,40 @@
+# Resource file for bwedit version 3.0
+# Do not edit. Use the "Edit options" menu of bwedit
+
+# Main window
+TextBackGround		: #000000
+TextForeGround		: #ffffff
+SelectionBackGround	: #ffffff
+SelectionForeGround	: #000000
+CursorColor		: #d0f080
+TextHeight		: 16
+TextWidth		: 72
+DefaultPointSize	: 120
+Slant			: r
+NumWin			: 0
+ViewKbdMap		: 0
+
+# Roman window
+TextBackGround2		: #ffffff
+TextForeGround2		: #000000
+SelectionBackGround2	: #ffffaa
+SelectionForeGround2	: #000000
+CursorColor2		: #CC00CC
+TextHeight2		: 24
+TextWidth2		: 80
+OnlineForeGround	: #00ffff
+OnlineBackGround	: #000000
+NumWin2			: 0
+EncFile			: /usr/local/bwedit/lib/bn.enc
+
+# Mail options
+BWMailDir		: /home/barda/bwmail
+MailCommand		: elm -s %s %r < %f
+MIMENCommand		: mimencode %f
+MIMEDCommand		: mimencode -u %f
+UUNCommand		: uuencode %f %f
+UUDCommand		: uudecode %f -o /dev/stdout
+MailInBox		: /home/barda/mail/inbox
+ReadMail		: 0
+
+# End of .bweditrc

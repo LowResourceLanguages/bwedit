@@ -1,0 +1,492 @@
+### Encoding file for bwconv
+
+# Author: Abhijit Das (Barda) [ad_rab@yahoo.com]
+# Date: December 06 1999
+
+----------------------------------------------------------------------------
+
+  Copyright (C) 1998-2002 by Abhijit Das [ad_rab@yahoo.com]
+
+  This file is part of BWEDIT.
+
+  BWEDIT is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  BWEDIT is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with BWEDIT; if not, write to the Free Software
+  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+----------------------------------------------------------------------------
+
+You may modify this file to define an encoding that suits you better.
+Here are a few points to remember.
+
+First you must define an encoding alphabet to denote parsing token
+category codes. This involves definition of the vowel alphabet, the
+consonant alphabet and some special primitives. If the encoding file
+does not specify them, the following default values are used.
+
+# VowelAlphabet           : aAeEiILoORuU
+# ConsonantAlphabet       : bBcCdDfFgGhHjJkKlmMnNpPqQrsStTvVwWxXyYZ^
+# SyllableSeparator       : _
+# HasantaCode             : __
+# RefCode                 : ^r,r
+# RafalaCode              : ^r,r
+# JafalaCode              : ^y,y
+# ChandrabinduCode        : ^
+
+After you have determined your encoding alphabet, you should define
+individual codes. A vowel or consonant code can be defined in the following
+formats.
+
+# <code> : <char>
+# <code> : \<asciivalue>
+
+The first of this associates <code> with the font character <char>. The
+second associates <code> with the font character of ascii value <asciivalue>.
+For example, the seventh bengali consonant `chh' is defined in the font
+file in the location C whose ASCII value is 67. The following two
+declarations are, thus, equivalent.
+
+# chh  : C
+# chh  : \67
+
+Punctuation symbols can be encoded ONLY in one of the following two ways.
+
+# <char1>  : <char2>
+
+to imply that the punctuation symbol <char1> is used to stand for the
+character <char2> in the font file. For example, `|' denotes `.' (period)
+below. In the second method, an encoding line like
+
+# <char3><char4> : <char5>
+
+specifies that <char5> is the `LIGATURE' of <char3> and <char4>. See below
+for the encoding of $ as the ligature of / and -. In the two examples
+above, <char2> or <char5> can be specified either as an explicit character
+or by its ASCII value in decimal preceded by a backslash.
+
+When bwconv runs, it first replaces each punctuation symbol by the
+right hand side of the first type of encoding, provided that such an
+encoding is defined. It then applies the ligature rules specified by
+the second type of encodings.
+
+A single glyph may have more than one (and at least one) encoding. Each
+encoding must come in a single line. No encoding is allowed to span over
+multiple lines. Conversely, if two or more glyphs have the same encoding,
+the one that comes first will be effective during conversion. All subsequent
+occurences will generate a diagnostic message that bwconv does not like this.
+
+# A line not having a colon (:) is ignored. A line with a colon having
+no non-white characters on one side (or both sides) of the colon is also
+ignored. That is, the folowing eight colon-ed lines have no effect.
+
+:
+       :      
+       :
+:             
+a:
+a:            
+            :b
+:b
+
+Anything in a line that follows a hash (#) is also ignored. You may put
+any number of spaces anywhere in a line (of course, not inside words).
+
+The order in which this file is organized is absolutely irrelevant
+(except in the unwanted case where you specify the same code for 2 or
+more glyphs). Any permutation of the lines in this file has the
+same effect. For that matter, the definition of alphabets (for vowels,
+consonants etc.) can occur after all individual encodings and these
+definitions need not even be present in this file at all (as long you
+stick to the default values stated above).
+
+To simplify matters, see lots of example below. For further details, read
+the documentation.
+
+Encoding alphabet
+-----------------
+The following definitions of alphabets are at the very heart of the
+working of bwconv. The VowelAlphabet specifies the keyboard characters
+you reserve for encoding of Bengali vowels (swarabarna's). Similarly
+the ConsonantAlphabet specifies the encoding alphabet of Bengali
+consonants (byaanjanbarna's). These two sets must be mutually disjoint.
+Any common character in them will be treated as a consonant symbol.
+
+VowelAlphabet		: aAeEiILoORuU
+ConsonantAlphabet	: bBcCdDfFgGhHjJkKlmMnNpPqQrsStTvVwWxXyYZ^
+
+Special primitives
+------------------
+The SyllableSeparator is the primitive that separates two successive
+consonants having no vowel sounds between them. Without this the
+sequence of consonants will refer to a conjunct consonant. For example,
+ekTi prints the conjunct of k and T, whereas ek_Ti disallows k and T
+to form the conjunct. In this case, the SyllableSeparator acts as an
+`unprintable hasanta'. For the `printable hasanta' one must use the
+HasantaCode. The second duty of SyllableSeparator is to separate two
+successive vowel sounds having no consonant sound in between, as in
+du_iTi (duiTi will not produce the desired output). The default value
+of SyllableSeparator is `_' (underscore). HasantaCode does not have a
+default value.
+
+Finally note that the SyllableSeparator must be a `single' character,
+whereas the HasantaCode should be a string of one or two characters.
+
+SyllableSeparator	: _
+HasantaCode		: __
+
+The following four primitives are special in forming conjuncts. For these
+the encoding should be specified little differently. The left hand side
+is the keyword for the code. The right hand side is a comma-separated
+list of strings composed of characters from the ConsonantAlphabet. That
+is, rafalaa can be addressed either as `r' or as `^r'. For each of these
+special primitives, at most four (4) encodings can be defined. The comma-
+separated list must not contain a white space character. If one or more
+of the following lines are absent from the file, the corresponding default
+values as below will be used.
+# RefCode               : ^r,r
+# RafalaCode            : ^r,r
+# JafalaCode            : ^y,y
+# ChandrabinduCode      : ^
+
+RefCode			: ^r,r
+RafalaCode		: ^r,r
+JafalaCode		: ^y,y
+ChandrabinduCode	: ^
+ 
+Encoding of Vowels
+------------------
+Each code for a Bengali vowel must be a string of length at most 10
+with characters from the VowelAlphabet. The right hand side may refer
+either to the pure vowel or to the vowel form (kaar) associated with
+the vowel. The special code for \14 is the vowel sound produced by
+`a + jafalaa + aa'. This is not defined by grammarians as a Bengali vowel.
+We do it here, because it is quite often used and calls for a convenient
+definition. Some people use `e + jafala + aa' interchangably, but this
+is not quite common and is neither implemented nor encouraged.
+
+a	: a
+A	: A
+aa	: A
+i	: i
+I	: I
+ee	: I
+ii	: I
+u	: u
+U	: U
+oo	: U
+uu	: U
+R	: W
+Ri	: W
+L	: 9
+Li	: 9
+e	: e
+E	: E
+oi	: E
+o	: \8
+O	: O
+ou	: O
+ae	: \14
+ 
+Encoding of consonants
+----------------------
+Each code for a Bengali consonant must be a string of length at most 10
+with characters from the ConsonantAlphabet.
+
+k	: k
+K	: K
+kh	: K
+g	: g
+G	: G
+gh	: G
+^n	: q
+c	: c
+ch	: c
+C	: C
+chh	: C
+j	: j
+J	: J
+jh	: J
+^N	: Q
+T	: T
+Th	: Z
+D	: D
+Dh	: X
+N	: N
+t	: t
+th	: z
+d	: d
+dh	: x
+n	: n
+p	: p
+f	: f
+ph	: f
+b	: b
+v	: v
+bh	: v
+m	: m
+Y	: Y
+r	: r
+l	: l
+w	: b
+S	: S
+sh	: S
+ss	: F
+s	: s
+h	: h
+rr	: R
+rh	: V
+y	: y
+^t	: B
+M	: M
+H	: H
+
+Encoding of Conjunct consonants
+-------------------------------
+Conjunct consonants are treated exactly the same way as the consonants are.
+That is, the codes for the Bengali conjunct consonants must be strings (of
+maximum length 10) with characters form the ConsonantAlphabet. Most of the
+conjuncts are defined in the `higher' ASCII region in the font files.
+Your keyboard may not be able to print them straightway. The \<asciivalue>
+definitions should be used for them.
+
+kk	: \128
+kT	: \129
+kt	: \130
+kb	: \131
+kw	: \131
+km	: \132
+kr	: \133
+kl	: \134
+kkh	: \135
+kkhN	: \136
+kkhm	: \137
+ks	: \138
+gdh	: \139
+gD	: \139
+gn	: \140
+gb	: \141
+gm	: \142
+gl	: \143
+ghn	: \144
+Gn	: \144
+nk	: \145
+nkkh	: \146
+nkh	: \147
+nK	: \147
+ng	: \148
+ngh	: \149
+nG	: \149
+ngm	: \150
+chch	: \151
+cc	: \151
+chchh	: \152
+cC	: \152
+chchhb	: \153
+chchhw	: \153
+cCb	: \153
+cCw	: \153
+cn	: \154
+jj	: \155
+jjb	: \156
+jjw	: \156
+jjh	: \157
+jJ	: \157
+jn	: \158
+jb	: \159
+jw	: \159
+nch	: \80
+nc	: \80
+nchh	: \161
+nC	: \161
+nj	: \162
+njh	: \163
+nJ	: \163
+TT	: \164
+Tb	: \165
+Tw	: \165
+DD	: \166
+NT	: \167
+NTh	: \168
+ND	: \169
+NN	: \170
+Nm	: \171
+tt	: \172
+ttb	: \173
+ttw	: \173
+tth	: \174
+tn	: \175
+tb	: \176
+tw	: \176
+tm	: \177
+tr	: \178
+tru	: \179
+thb	: \38
+thw	: \38
+dg	: \180
+dgh	: \181
+dG	: \181
+dd	: \182
+ddh	: \183
+db	: \184
+dw	: \184
+dv	: \185
+dbh	: \185
+dvr	: \186
+dbhr	: \186
+dm	: \187
+dhn	: \188
+dhb	: \189
+dhw	: \189
+nT	: \190
+nD	: \191
+nt	: \192
+ntu	: \193
+ntb	: \194
+ntw	: \194
+ntr	: \195
+nth	: \196
+nd	: \197
+ndb	: \64
+ndw	: \64
+ndh	: \198
+nn	: \199
+nb	: \200
+nw	: \200
+nm	: \201
+ns	: \202
+pT	: \203
+pt	: \204
+pn	: \205
+pp	: \206
+pl	: \207
+ps	: \208
+fl	: \209
+phl	: \209
+bj	: \210
+bd	: \211
+bdh	: \212
+bb	: \213
+bl	: \214
+vr	: \215
+bhr	: \215
+vl	: \216
+bhl	: \216
+mn	: \217
+mp	: \218
+mf	: \219
+mph	: \219
+mb	: \220
+mv	: \221
+mbh	: \221
+mvr	: \222
+mbhr	: \222
+mm	: \223
+ml	: \224
+lk	: \225
+lg	: \226
+lgu	: \227
+lT	: \228
+lD	: \229
+lp	: \230
+lb	: \231
+lw	: \231
+lm	: \232
+ll	: \233
+shch	: \234
+Sc	: \234
+shchh	: \235
+SC	: \235
+shn	: \236
+Sn	: \236
+shm	: \237
+Sm	: \237
+shl	: \238
+Sl	: \238
+shb	: \239
+shw	: \239
+Sb	: \239
+Sw	: \239
+ssk	: \240
+sskr	: \241
+ssT	: \242
+ssTh	: \243
+ssN	: \244
+ssp	: \245
+ssf	: \246
+ssph	: \246
+ssm	: \247
+sk	: \248
+skr	: \249
+skl	: \250
+skh	: \251
+sK	: \251
+sT	: \252
+st	: \253
+stu	: \254
+str	: \255
+sth	: \16
+sn	: \17
+sp	: \18
+spl	: \19
+sf	: \20
+sph	: \20
+sb	: \21
+sw	: \21
+sm	: \22
+sl	: \23
+hN	: \24
+Nh	: \24
+hn	: \31
+nh	: \31
+hb	: \62
+hw	: \62
+hm	: \76
+hl	: \125
+lh	: \125
+rrg	: \127
+
+Special consonant-vowel combinations
+------------------------------------
+These are treated as consonant symbols. New versions of bwedit do not
+require these special encodings. They are retained in this file for
+backward compatibility.
+
+^^rr    : \25
+^^rrr   : \26
+^^h     : \27
+^^hh    : \28
+^^g     : \29
+^^S     : \30
+^^sh    : \30
+^^tr    : \179
+^^nt    : \193
+^^lg    : \227
+^^st    : \254
+
+Punctuation symbol encodings
+----------------------------
+The codes must comprise characters in neither the VowelAlphabet nor
+the ConsonantAlphabet. As stated earlier, here each code must be of
+length 1 or 2. The latter case denotes ligatures.
+
+/-	: $    #  Alternative way of writing the Bengali currency symbol
+..	: <    #  +-------------------------------------------------------+ 
+--	: {    #  |   These are actually not necessary, since these       |
+{-	: |    #  |   ligatures are automatically handled by bwedit. See  |
+''	: "    #  |   how \92 designates the character \ (backslash).     |
+``	: \92  #  +-------------------------------------------------------+
+|	: .    #  Many people prefer `|' to `.' to print the Bengali period.
+||	: <    #  And this is the double period. Not necessary
+               #  beacuse of the encoding ..  : < above.
+# __	: _    #  This is already taken care of by the line HasantaCode : __
+
+# end of bn.enc

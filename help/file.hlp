@@ -1,0 +1,21 @@
+
+                     FILE MENU (F10)
+
+New main window (Alt+1)
+	  open a blank main editor window
+New transliterator window (Alt+2)
+	  open a blank transliterator window
+
+New	  edit a new file (Alt + N)
+Load	  load a file in the editor (F2)
+Insert	  insert a file at the current cursor position
+	  (Alt + I)
+Append	  append a file at the end of the edited text
+	  (Alt + A)
+Save	  save content of the editor to the file
+	  currently edited (F3)
+Save As	  save content of the editor to a named file
+	  (Alt + S)
+
+Close	  close this main editor window (Alt + C)
+Quit	  quit BWEDIT (Alt + Q)

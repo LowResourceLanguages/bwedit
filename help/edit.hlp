@@ -1,0 +1,92 @@
+
+                       EDIT MENU
+
+Clear	   clear editor text
+Select all
+	   select the entire editor text
+
+Cut	   remove selected region and remember it in
+	   the cut buffer (F4)
+Copy	   remember selected region in the cut buffer (F5)
+Paste	   insert the content of cut buffer at the
+	   current cursor position (F6)
+
+Note that BWEDIT maintains a single cut buffer for all
+main windows opened (and another single one for all
+transliterator windows). This convention allows you to
+export Bengali text across various main windows or across
+various transliterator windows (but NOT between a main
+and a transliterator window).
+
+Two other keyboard bindings deserve specific mention in
+this context. These bindings are associated with the
+text area of the main windows.
+
+F7	Start marking a region (after clearing the
+	previous selection, if any)
+F8	Complete marking of a region and select the
+	region between the current cursor position and
+	a previous cursor position which the user marked
+	using F7.
+
+Search	   Search for strings in the editor text (F11)
+
+The search routine is introduced in Version 2.2 of BWEDIT.
+You may use this facility to search for literal strings in
+the text currently being edited. The replace function
+replaces the `next' occurrence of the search string by the
+replace string. The `replace all' function replaces all
+occurrences of the search string by the replace string and
+outputs a diagnostic message on the number of replacements
+carried out. The search proceeds in the forward direction
+by default. If you want to search backward, click the
+radio button below the replace string entry.
+
+The search proceeds in the wrap-around fashion. That is,
+in the forward search mode, when search hits the end of the
+text, search continues from the top of the text. Similarly
+for backward search, when the beginning of the text is
+reached, search continues from the end of the text.
+
+Initially search starts from the beginning of the text
+(and not from the insert cursor). Search finds out the
+first occurrence (or the last one in backward mode) of the
+search string in the text during the first request. A
+pointer keeps track of the position of the search string
+found. The next search or replace request starts searching
+from this pointer. Each of the operations `search',`replace' and
+and `replace all' highlights the text found or replaced.
+
+Both the strings should be input by using the keyboard only.
+The characters in the position 32 -- 127 can be directly
+inserted. For other characters you should use the control
+or escape sequences described in the keyboard map window.
+Since the search dialog box grabs the focus, you cannot
+insert characters by clicking the buttons in the keyboard
+map window.
+
+This version of BWEDIT does not support regular expressions
+in the search or replace strings.
+
+Goto      Go to a specified line number (Alt + #\35#)
+
+This feature is introduced in version 3.0 of bwedit.
+
+If you select the menu item [Goto line] a small dialog
+box is opened and asks for a line number. If you input
+a line number in the entry area and press the button
+`Go to', the insert cursor of the text area goes to the
+beginning of that line and the text is appropriately
+scrolled so that this line is visible in the display
+area. The [Goto line] dialog box can be used in another
+way, namely when you click the button `current', the
+current line number is displayed in the entry area.
+
+Note that the [Goto line] dialog box remains open until
+you specifically close it by pressing the `Dismiss'
+button. If you work with multiple (main and transliterator)
+windows and want to go to a line in a window different
+from that from which the dialog box is opened, then just
+go to this second editor window and select the corresponding
+item [Edit]/[Goto line]. The old dialog box can now be
+used for this new window.

@@ -1,0 +1,86 @@
+
+                       MAIL MENU
+
+Read Mail (F9)
+     Open a mail reader window to display user's mails.
+     BWEDIT can read user's local mailbox and show the
+     mails accordingly.
+
+Send Mail (Shift + F9)
+     Send e-mail whose content is displayed in the main
+     editor window. A dialog box is opened that asks for
+     the e-mail id of the recipient, a subject and an
+     encoding scheme. The encoding schemes suported are
+     bwencode, uuencode and MIME. Since the main editor
+     window contains 8-bit data, it's advisable to send an
+     encoded form of the text. We encourage you to use the
+     bwencoding scheme. uuencode or MIME can be used, but
+     that is based on the assumption that your recipient
+     has softwares to decode data in these formats.
+
+Read bwencoded text (Alt + 5)
+Read MIME encoded text (Alt + 6)
+Read uuencoded text (Alt + 7)
+     Decrypt the content of a file corresponding to the
+     encoding scheme. The file should be a saved version
+     of an e-mail containing text in the appropriate
+     encoded format. Mails can be saved by the mail reader
+     of BWEDIT or by any other mail reader. The bwencoding
+     and uuencoding schemes do not require you to delete
+     the mail header and tailer. The MIME encoding, on the
+     other hand, does.
+
+Edit mail options
+     Edit options corresponding to the mailing operations
+     provided by bwedit. These options include
+
+     Mail cache directory
+        Directory to store temporary files before the mail
+        is transfered. This can be specified either as an
+        absolute path name or as a pathname relative to your
+        login directory. In the latter case, you must
+        specify the path as ~/mail_cache_path. (The default
+        value is ~/bwmail.)
+
+     Send mail command
+        This is the send mail command provided by your
+        system that can be executed from your shell prompt.
+        This command must not be interactive. The default
+        is "elm -s %s %r < %f". Here %s is the subject,
+        %r is the e-mail id of the recipient and %f is the
+        file from which the content is read (a temporary
+        file in the mail cache).
+
+     MIME encoding command
+        A command that reads a file (%f) and outputs a
+        MIME encoded version of the file to stdout. The
+        default is "mimencode %f".
+
+     MIME decoding command
+        This should take a MIME encoded file (%f), decode
+        it and send the output to stdout. The default is
+        "mimencode -u %f".
+
+     uuencoding command
+        A command that reads a file (%f) and outputs a
+        uuencoded version of the file to stdout. The
+        default is "uuencode %f %f".
+
+     uudecoding command
+        This should take a uuencoded file (%f), decode it
+        and send the output to stdout. The default is
+        "uudecode %f -o /dev/stdout".
+
+     Mail inbox
+        The file where users incoming mails are saved.
+        The default value is /var/spool/mail/<user_name>.
+
+     Launch read mail window
+        This is a flag indicating if the read mail window
+        will be launched by default at start-up. However,
+        if the user calls BWEDIT with the option `-rm',
+        then this window is launched irrespective of the
+        value of this flag.
+
+     Clear mail cache
+        Delete temporary files in the mail cache directory.

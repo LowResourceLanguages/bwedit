@@ -1,0 +1,158 @@
+.TH bwedit 1 "June 30 2002"
+.SH NAME
+bwedit \- Text editor for Bengali (Version 3.0)
+.SH SYNOPSIS
+.B bwedit
+.br
+.B bwedit
+file1 file2 ...
+.br
+.B bwedit
+[options]
+.SH DESCRIPTION
+.B bwedit
+is an experimental text editor for Bengali. It runs on any X11 window system
+having the Tcl/Tk shell
+.BR wish (1).
+The basic features of
+.B bwedit
+include
+.IP "\fBGUI\fP"
+The graphical interface is very easy-to-use and effective.
+.IP "\fBMultiple editor windows\fP"
+.B bwedit
+version 2.0 onwards supports working with multiple editor
+windows.
+.IP "\fBCharacter buttons\fP"
+There is no need to remember character maps for the huge
+unmanagable Bengali alphabet. Click on the character buttons in the keyboard map window
+to insert these characters at the current cursor position.
+.IP "\fBKeyboard input\fP"
+All characters can be inserted using keyboard only. For characters at
+higher ASCII positions, control sequences are defined as an alternative to the character
+buttons.
+.IP "\fBRoman transliteration\fP"
+If you choose, you may write romanized Bengali (7 bit ASCII). If you
+follow a set of simple rules,
+.B bwedit
+can convert the transliterated text to Bengali - on-line.
+The rules are simple, at least I think so!
+.IP "\fBExport facilities\fP"
+You can generate HTML, LaTeX and PostScript files from Bengali text
+files.
+.IP "\fBTags\fP"
+Select text and change the display style of the selected text to subscript, superscript,
+underlined text ... You can insert Roman characters (and characters corresponding to any X
+font you have) anywhere in the editor text. These tags can be saved and exported making
+.B bwedit
+(almost) WYSIWYG.
+.IP "\fBMail facilities\fP"
+.B bwedit
+gives you facilities to send Bengali documents (Bengali text or
+transliterated ascii text) through e-mail. Since Bengali documents may contain 8-bit data,
+encoding of this to 7-bit ASCII is necessary. In addition to the built-in encoder,
+.B bwedit
+provides interface to MIME- and uu- encoding techniques. Versions 2.0 onwards
+is also capable of reading a local mail folder and display the mails
+interactively.
+.IP "\fBConfiguration\fP"
+You may configure
+.B bwedit
+in a variety of ways. You may change colors,
+window size, default font size and so on. You may even customize the Roman-to-Bengali
+encoding scheme to define an encoding that suits you better.
+.IP "\fBHelp\fP"
+.B bwedit
+comes with extensive on-line help. 
+.IP "\fBSpell checking\fP"
+Version 3.0 onwards of
+.B bwedit
+supports spell checking in the Romanized editing mode.
+.SH OPTIONS
+.IP "\fB-bw\fP \fI<file>\fP"
+Open bwencoded \fI<file>\fP and show in an editor window.
+.IP "\fB-e\fP \fI<file> \fp"
+Read Roman-to-Bengali encoding from \fI<file>\fP
+.IP "\fB-f\fP \fI<size>\fP"
+Set default font size of Bengali text to \fI<size>\fP points
+.IP \fB-h\fP
+Print help message and quit.
+.IP "\fB-hl\fP \fI<num>\fP"
+Set help level (0, 1, 2 or 3)
+.IP \fB-k\fP
+Open the keyboard map window at start-up.
+.IP "\fB-m\fP \fI<file>\fP"
+Open \fI<file>\fP in a main window.
+.IP "\fB-mime\fP \fI<file>\fP"
+Open MIME encoded \fI<file>\fP in a main editor window.
+.IP "\fB-nm\fP \fI<num>\fP"
+Open \fI<num>\fP blank main windows.
+.IP "\fB-nt\fP \fI<num>\fP"
+Open \fI<num>\fP blank transliterator windows.
+.IP "\fB-rm\fP"
+Open read mail window at start-up.
+.IP "\fB-t\fP \fI<file>\fP"
+Open \fI<file>\fP in a transliterator window.
+.IP "\fB-uu\fP \fI<file>\fP"
+Open uuencoded \fI<file>\fP in a main editor window.
+.IP "\fB-v\fP"
+Print version info and quit.
+.SH EXAMPLES
+A simple call
+.IP
+bwedit
+.PP
+opens only the coordinator window. A call like
+.IP
+bwedit <file1> <file2> ...
+.PP
+opens main editor windows displaying <file1>, <file2>, ... Finally a call
+like
+.IP
+bwedit -m xmp1.bng -t xmp2.btx -nm 2 -nt 2 -rm -k
+.PP
+opens, in addition to the coordinator window, a main editor window
+displaying xmp1.bng, two other blank main windows,
+a transliterator window displaying xmp2.btx, two other blank transliterator
+windows, the read mail window and the keyboard map window.
+.SH DETAILS
+For details look at the \fBbwedit\fP homepage
+.IR http://in.geocities.com/ad_rab/bengali/bwedit/index.html
+.SH SEE ALSO
+.BR wish (1),
+.BR tclsh (1),
+.BR tk (n),
+.BR latex (1).
+.SH AUTHOR
+Abhijit Das (Barda)
+.br
+Department of Mathematics
+.br
+Indian Institute of Technology
+.br
+Kanpur 208 016 India
+.br
+e-mail: ad_rab@yahoo.com
+.br
+URL: http://in.geocities.com/ad_rab/
+.SH Copyright notice
+\fBbwedit\fP is copyrighted (C) 1998-2002 by the author Abhijit Das
+[adrab@yahoo.com].
+.PP
+.B bwedit
+is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+.PP
+.B bwedit
+is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+.PP
+You should have received a copy of the GNU General Public License
+along with
+.B bwedit
+; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA

@@ -1,0 +1,21 @@
+
+         TRANSLITERATOR WINDOW : THE TEXT AREA
+
+This helps you edit a 7-bit ASCII file in a standard Roman
+font. This editor is used to create and/or edit Bengali
+files transliterated into Roman. The Roman-to-Bengali
+transliteration rules can be displayed on-line by
+selecting the item [Roman-to-Bengali conversion rules]
+in the [Help] menu. The on-line view below the text area
+shows the transliteration of the current line being edited.
+
+The Keyboard map window (See the first item of the [Help]
+menu) consists of an array of character buttons. If you
+select the target window to a transliterator window and
+click on a button of the keyboard map, the transliteration
+encoding of that character is inserted at the current cursor
+position of the selected transliterator window.
+
+In order to include Roman text in the output Bengali text,
+use hash (#\35#). See the `Roman-to-Bengali transliteration
+rules' for details.
